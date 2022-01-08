@@ -1,9 +1,7 @@
 # Tommys dotfiles
 
-## Contents
-
 - Neovim config -[vim-plug](https://github.com/junegunn/vim-plug) for managing plugins
-	- `:PlugInstall` to install plugins 
+  - `:PlugInstall` to install plugins
 - fish config
 - PowerShell config
 
