@@ -1,0 +1,96 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+                {
+          "type": "shell",
+            "style": "powerline",
+            "powerline_symbol": "\uE0B0",
+                "foreground": "#282a36",
+          "background": "#bd93f9",
+              "properties": {}
+        },
+        {
+          "type": "root",
+          "style": "powerline",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "foreground": "#fffb38",
+          "background": "#ef5350",
+          "properties": {
+            "root icon": "\uf292",
+            "prefix": "<parentBackground>\ue0b0</> "
+          }
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#f8f8f2",
+          "background": "#44475a",
+          "properties": {
+            "style": "full",
+            "enable hyperlink": true
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#282a36",
+          "background": "#50fa7b",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
+            "{{ if and (gt.Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
+            "{{ if gt. Ahead 0}}#c792ea{{ end }}",
+            "{{ if gt .Behind 0 }}#c792ea{{ end }}"
+          ],
+          "properties": {
+            "branch_icon": "\ue725",
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "template": "{{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}|{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }}"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "\uE0b2",
+          "invert_powerline": true,
+          "background": "#50fa7b",
+          "foreground": "#282a36",
+          "properties": {
+            "prefix": "\ue718 ",
+            "postfix": " ",
+            "display_package_manager": true,
+            "yarn_icon": " <#348cba></>",
+            "npm_icon": " <#cc3a3a></> "
+          }
+        },
+        {
+          "type": "time",
+          "style": "powerline",
+          "powerline_symbol": "\uE0b2",
+          "invert_powerline": true,
+          "background": "#8be9fd",
+          "foreground": "#282a36",
+          "properties": {
+            "time_format": "Jan_2 15:04",
+            "prefix": " \uf5ef ",
+            "postfix": " "
+          }
+        }
+      ]
+    }
+  ]
+}
