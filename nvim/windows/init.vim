@@ -23,15 +23,15 @@ set nobackup
 set undofile
 set incsearch
 set termguicolors
-set background=dark
+" set background=dark
 set scrolloff=10
 set noshowmode
 set completeopt=menu,menuone,noselect
 set signcolumn=yes
 set updatetime=100
-set encoding=UTF-8
+set encoding=utf-8
 set fileencodings=utf-8,sjis,latin
-set clipboard+=unnamedplus " Copy paste between vim and everything else
+set clipboard+=unnamedplus " copy paste between vim and everything else
 set nojoinspaces " don't autoinsert two spaces after '.', '?', '!' for join command
 set showcmd " extra info at end of command line
 " set backspace=start,eol,indent
@@ -106,20 +106,18 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-capslock'
 
-Plug 'editorconfig/editorconfig-vim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'vimwiki/vimwiki', { 'on': ['VimwikiIndex'] }
 Plug 'norcalli/nvim-colorizer.lua', { 'branch': 'color-editor' }
 Plug 'machakann/vim-highlightedyank'
 Plug 'wesQ3/vim-windowswap' " <leader>ww
-Plug 'dstein64/vim-startuptime'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkreeftmeijer/vim-numbertoggle' "In a buffer with hybrid line numbers (:set number relativenumber), numbertoggle switches to absolute line numbers (:set number norelativenumber) automatically when relative numbers don't make sense.
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
-Plug 'junegunn/goyo.vim'
-Plug 'miyakogi/conoline.vim'
+" Plug 'miyakogi/conoline.vim' " Highlights the line of the cursor and changes
+" color according to the mode (normal/insert)
 
 " Status Line
 Plug 'hoob3rt/lualine.nvim'
@@ -163,11 +161,6 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-
-
-highlight Cursor guifg=#f00 guibg=#657b83
-highlight Comment cterm=italic gui=italic
-
 
 " Leader {{{
 let mapleader = " "
