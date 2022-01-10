@@ -1,7 +1,10 @@
 " Sets "{{{
+autocmd!
+
 set nocompatible
 set smarttab
 set si
+set ai
 set title
 set autoindent
 set number 
@@ -20,7 +23,8 @@ set nobackup
 set undofile
 set incsearch
 set termguicolors
-set scrolloff=2
+set background=dark
+set scrolloff=10
 set noshowmode
 set completeopt=menu,menuone,noselect
 set signcolumn=yes
@@ -30,6 +34,7 @@ set fileencodings=utf-8,sjis,latin
 set clipboard+=unnamedplus " Copy paste between vim and everything else
 set nojoinspaces " don't autoinsert two spaces after '.', '?', '!' for join command
 set showcmd " extra info at end of command line
+" set backspace=start,eol,indent
 set wildignore+=*/node_modules/**
 set shiftwidth=2
 set tabstop=2
@@ -38,6 +43,14 @@ set ttyfast
 set lazyredraw
 language en_US
 
+" }}}
+
+" Automatically install vim-plug {{{
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" if empty(glob(data_dir . '/autoload/plug.vim'))
+"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
 " }}}
 
 " Plugins {{{
@@ -94,16 +107,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-capslock'
 
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'APZelos/blamer.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'vimwiki/vimwiki', { 'on': ['VimwikiIndex'] }
 Plug 'norcalli/nvim-colorizer.lua', { 'branch': 'color-editor' }
 Plug 'machakann/vim-highlightedyank'
-" Plug 'folke/which-key.nvim'
 Plug 'wesQ3/vim-windowswap' " <leader>ww
-" Plug 'justinmk/vim-sneak'
-" Plug 'tweekmonster/startuptime.vim'
 Plug 'dstein64/vim-startuptime'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'akinsho/nvim-bufferline.lua'
@@ -111,7 +120,6 @@ Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'junegunn/goyo.vim'
 Plug 'miyakogi/conoline.vim'
-" Plug 'github/copilot.vim'
 
 " Status Line
 Plug 'hoob3rt/lualine.nvim'
@@ -121,19 +129,22 @@ call plug#end()
 " }}}
 
 " Colors {{{
- if (has("termguicolors"))
-   set termguicolors " enable true colors support
- endif
- let g:dracula_colorterm = 0
- let g:dracula_italic = 1
- colorscheme dracula
+if (has("termguicolors"))
+  set termguicolors " enable true colors support
+endif
+let g:dracula_colorterm = 0
+let g:dracula_italic = 1
+colorscheme dracula
+
+highlight Cursor guifg=#f00 guibg=#657b83
+highlight Comment cterm=italic gui=italic
 
 " 'prettier/vim-prettier' {{{
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 " }}}
 
- " File types "{{{
+" File types "{{{
 " ---------------------------------------------------------------------
 " JavaScript
 au BufNewFile,BufRead *.es6 setf javascript
@@ -172,24 +183,24 @@ nnoremap <silent> <Leader>fg :DashboardFindWord<CR>
 nnoremap <silent> <Leader>fm :DashboardJumpMark<CR>
 nnoremap <silent> <Leader>nf :DashboardNewFile<CR>
 let g:dashboard_custom_shortcut={
-\ 'last_session'       : 'SPC s l',
-\ 'find_history'       : 'SPC f h',
-\ 'find_file'          : 'SPC f f',
-\ 'new_file'           : 'SPC n f',
-\ 'change_colorscheme' : 'SPC c t',
-\ 'find_word'          : 'SPC f g',
-\ 'book_marks'         : 'SPC f m',
-\ }
+      \ 'last_session'       : 'SPC s l',
+      \ 'find_history'       : 'SPC f h',
+      \ 'find_file'          : 'SPC f f',
+      \ 'new_file'           : 'SPC n f',
+      \ 'change_colorscheme' : 'SPC c t',
+      \ 'find_word'          : 'SPC f g',
+      \ 'book_marks'         : 'SPC f m',
+      \ }
 let s:header = [
-    \ '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
-    \ '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
-    \ '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
-    \ '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
-    \ '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
-    \ '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
-    \ '',
-    \ '                 [ @yungleeee ]                 ',
-    \ ]
+      \ '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+      \ '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+      \ '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+      \ '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+      \ '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+      \ '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+      \ '',
+      \ '                 [ @yungleeee ]                 ',
+      \ ]
 let s:footer = []
 let g:dashboard_custom_header = s:header
 let g:dashboard_custom_footer = s:footer
@@ -209,7 +220,7 @@ saga.init_lsp_saga {
   hint_sign = '',
   infor_sign = '',
   border_style = "round",
-}
+  }
 
 EOF
 
@@ -229,92 +240,92 @@ local protocol = require'vim.lsp.protocol'
 -- Use an on_attach function to only map the following keys 
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  --Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+--Enable completion triggered by <c-x><c-o>
+buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
+-- Mappings.
+local opts = { noremap=true, silent=true }
 
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  --buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  --buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  --buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+-- See `:help vim.lsp.*` for documentation on any of the below functions
+buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+--buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+--buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+--buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+--buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
-  -- formatting
-  -- if client.name == 'tsserver' then
-  --   client.resolved_capabilities.document_formatting = false
-  -- end
+-- formatting
+ if client.name == 'tsserver' then
+   client.resolved_capabilities.document_formatting = false
+ end
 
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+if client.resolved_capabilities.document_formatting then
+  vim.api.nvim_command [[augroup Format]]
+  vim.api.nvim_command [[autocmd! * <buffer>]]
+  vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  vim.api.nvim_command [[augroup END]]
+end
 
-  --protocol.SymbolKind = { }
-  protocol.CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
-    '', -- Field
-    '', -- Variable
-    '', -- Class
-    'ﰮ', -- Interface
-    '', -- Module
-    '', -- Property
-    '', -- Unit
-    '', -- Value
-    '', -- Enum
-    '', -- Keyword
-    '﬌', -- Snippet
-    '', -- Color
-    '', -- File
-    '', -- Reference
-    '', -- Folder
-    '', -- EnumMember
-    '', -- Constant
-    '', -- Struct
-    '', -- Event
-    'ﬦ', -- Operator
-    '', -- TypeParameter
+--protocol.SymbolKind = { }
+protocol.CompletionItemKind = {
+  '', -- Text
+  '', -- Method
+  '', -- Function
+  '', -- Constructor
+  '', -- Field
+  '', -- Variable
+  '', -- Class
+  'ﰮ', -- Interface
+  '', -- Module
+  '', -- Property
+  '', -- Unit
+  '', -- Value
+  '', -- Enum
+  '', -- Keyword
+  '﬌', -- Snippet
+  '', -- Color
+  '', -- File
+  '', -- Reference
+  '', -- Folder
+  '', -- EnumMember
+  '', -- Constant
+  '', -- Struct
+  '', -- Event
+  'ﬦ', -- Operator
+  '', -- TypeParameter
   }
 end
 
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
+vim.lsp.protocol.make_client_capabilities()
 )
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,
   capabilities = capabilities
-}
+  }
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
-}
+  }
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
@@ -331,63 +342,76 @@ nvim_lsp.diagnosticls.setup {
           errorsRoot = '[0].messages',
           line = 'line',
           column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning'
-        }
+        endLine = 'endLine',
+      endColumn = 'endColumn',
+      message = '[eslint] ${message} [${ruleId}]',
+      security = 'severity'
       },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-    },
-    formatters = {
-      eslint_d = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
-        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-        rootPatterns = { '.git' },
-      },
-      prettier = {
-        command = 'prettier_d_slim',
-        rootPatterns = { '.git' },
-        -- requiredFiles: { 'prettier.config.js' },
-        args = { '--stdin', '--stdin-filepath', '%filename' }
+    securities = {
+      [2] = 'error',
+      [1] = 'warning'
       }
     },
-    formatFiletypes = {
-      css = 'prettier',
-      javascript = 'prettier',
-      javascriptreact = 'prettier',
-      json = 'prettier',
-      scss = 'prettier',
-      less = 'prettier',
-      typescript = 'prettier',
-      typescriptreact = 'prettier',
-      json = 'prettier',
-      markdown = 'prettier',
+  },
+filetypes = {
+  javascript = 'eslint',
+  javascriptreact = 'eslint',
+  typescript = 'eslint',
+  typescriptreact = 'eslint',
+  },
+formatters = {
+  eslint_d = {
+    command = 'eslint_d',
+    rootPatterns = { '.git' },
+    args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+    rootPatterns = { '.git' },
+    },
+  prettier = {
+    command = 'prettier_d_slim',
+    rootPatterns = { '.git' },
+    -- requiredFiles: { 'prettier.config.js' },
+    args = { '--stdin', '--stdin-filepath', '%filename' }
     }
+  },
+formatFiletypes = {
+  css = 'prettier',
+  javascript = 'prettier',
+  javascriptreact = 'prettier',
+  json = 'prettier',
+  scss = 'prettier',
+  less = 'prettier',
+  typescript = 'prettier',
+  typescriptreact = 'prettier',
+  json = 'prettier',
+  markdown = 'prettier',
   }
+}
 }
 
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 4,
-      prefix = ''
+vim.lsp.diagnostic.on_publish_diagnostics, {
+  underline = true,
+  -- This sets the spacing and the prefix, obviously.
+  virtual_text = {
+    spacing = 4,
+    prefix = ''
     }
   }
 )
+
+-- suppress error messages from lang servers
+vim.notify = function(msg, log_level, _opts)
+    if msg:match("exit code") then
+        return
+    end
+    if log_level == vim.log.levels.error then
+        vim.api.nvim_err_writeln(msg)
+    else
+        vim.api.nvim_echo({{msg}}, true, {})
+    end
+end
+
 
 EOF
 " }}}
@@ -416,16 +440,16 @@ vim.api.nvim_exec([[let $POWERSHELL_WINDOW_ID=0]], true)
 require("bufferline").setup{
   highlights = {
     fill = {
-      guibg = "#282828"
+      guibg = "#44475a"
     },
     separator_selected = {
-      guifg = "#282828"
+      guifg = "#44475a"
     },
     separator_visible = {
-      guifg = "#282828"
+      guifg = "#44475a"
     },
     separator = {
-      guifg = "#282828"
+      guifg = "#44475a"
     }
   },
   options = {
@@ -446,7 +470,7 @@ require("bufferline").setup{
     end,
     offsets = {
       {
-        filetype = "coc-explorer",
+        filetype = "NvimTree",
         text = "File Explorer",
         highlight = "Directory",
         text_align = "center"
@@ -604,8 +628,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     },
   indent = {
-    enable = false,
-    disable = {}
+    enable = true,
   },
   context_commentstring = {
     enable = true
@@ -657,7 +680,7 @@ nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 "}}}
 
-" Keymaps
+" Remaps
 
 nnoremap <S-C-p> "0p
 " Delete without yank
@@ -724,3 +747,53 @@ nnoremap <leader>tn :set invrelativenumber<cr>
 
 " jj to Escape
 inoremap jj <ESC>
+
+" <leader> + * to substitute word under the cursor
+nnoremap <Leader>* :%s/\<<C-r><C-w>\>/
+
+" Inverted cursor workaround for windows terminal
+if !empty($WT_SESSION)
+    " guicursor will leave reverse to the terminal, which won't work in WT.
+    " therefore we will set bg and fg colors explicitly in an autocmd.
+    " however guicursor also ignores fg colors, so fg color will be set
+    " with a second group that has gui=reverse.
+    hi! WindowsTerminalCursorFg gui=none
+    hi! WindowsTerminalCursorBg gui=none
+    set guicursor+=n-v-c-sm:block-WindowsTerminalCursorBg
+
+    function! WindowsTerminalFixHighlight()
+        " reset match to the character under cursor
+        silent! call matchdelete(99991)
+        call matchadd('WindowsTerminalCursorFg', '\%#.', 100, 99991)
+
+        " find fg color under cursor or fall back to Normal fg then black
+        let bg = synIDattr(synIDtrans(synID(line("."), col("."), 1)), 'fg#') 
+        if bg == "" | let bg = synIDattr(synIDtrans(hlID('Normal')), 'fg#') | endif
+        if bg == "" | let bg = "black" | endif
+        exec 'hi WindowsTerminalCursorBg guibg=' . bg
+        " reset this group so it survives theme changes
+        hi! WindowsTerminalCursorFg gui=reverse
+    endfunction
+
+    function! WindowsTerminalFixClear()
+        " hide cursor highlight
+        silent! call matchdelete(99991)
+
+        " make cursor the default color or black in insert mode
+        let bg = synIDattr(synIDtrans(hlID('Normal')), 'fg#')
+        if bg == "" | let bg = "black" | endif
+        exec 'hi WindowsTerminalCursorBg guibg=' . bg
+    endfunction
+
+    augroup windows_terminal_fix
+        autocmd!
+        autocmd FocusLost * call WindowsTerminalFixClear()
+        autocmd FocusGained * if mode(1) != "i" | call WindowsTerminalFixHighlight() | endif
+
+        autocmd InsertEnter * call WindowsTerminalFixClear()
+        autocmd InsertLeave * call WindowsTerminalFixHighlight()
+        autocmd CursorMoved * call WindowsTerminalFixHighlight()
+    augroup END
+endif
+
+" vim: filetype=vim foldmethod=marker foldlevel=0 
