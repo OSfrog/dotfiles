@@ -12,7 +12,9 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "php",
   },
+  autotag = { enable = true },
   indent = {
     enable = true,
     -- disable = {
@@ -55,7 +57,7 @@ M.nvimtree = {
     },
   },
 
-  actions = { open_file = { quit_on_open = true }
-  }}
+  actions = { open_file = { quit_on_open = true } },
+}
 
 return M

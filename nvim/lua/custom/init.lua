@@ -11,7 +11,7 @@
 -- vim.opt.ignorecase = true  -- Ignore case when searching
 -- vim.opt.smartcase = true   -- Don't ignore case when search pattern has an uppercase character
 vim.opt.relativenumber = true -- Show relative line numbers
-vim.opt.wrap = false -- Don't wrap lines
+vim.opt.wrap = false          -- Don't wrap lines
 
 -- Highlight on yank
 vim.cmd [[

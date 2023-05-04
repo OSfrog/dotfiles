@@ -30,6 +30,10 @@ local plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      { "JoosepAlviste/nvim-ts-context-commentstring", ft = "javascriptreact" },
+      "windwp/nvim-ts-autotag",
+    },
     opts = overrides.treesitter,
   },
 
@@ -52,6 +56,10 @@ local plugins = {
     event = "BufRead",
   },
   {
+    "tpope/vim-repeat",
+    event = "BufRead",
+  },
+  {
     "karb94/neoscroll.nvim",
     event = "BufRead",
     config = function()
@@ -64,6 +72,39 @@ local plugins = {
     config = function()
       require("nvim-ts-autotag").setup()
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    config = function()
+      require("trouble").setup()
+    end,
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        prompt_prefix = "   ",
+      },
+      extensions_list = { "themes", "terms", "fzf" },
+      extensions = {
+        fzf = {
+          fuzzy = true,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = "smart_case",
+        },
+      },
+    },
+    dependencies = {
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
+    },
+    -- config = function()
+    --   require("telescope").load_extension "fzf"
+    -- end,
   },
   {
     "prettier/vim-prettier",
