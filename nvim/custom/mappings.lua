@@ -1,14 +1,11 @@
 ---@type MappingsTable
 local M = {}
 
--- 2 newlines down into insert mode using vim-unimpaired
-vim.api.nvim_set_keymap("n", "<leader>o", "]<space>o", { noremap = true, silent = true })
-
--- 2 newlines up into insert mode using vim-unimpaired
-vim.api.nvim_set_keymap("n", "<leader><S-O>", "[<space>O", { noremap = true, silent = true })
-
 M.general = {
   n = {
+    -- 2 newlines up/down into insert with vim-unimpaired
+    ["<leader>o"] = { "]<space>o", "insert 2 newlines down into insert mode", opts = { remap = true } },
+    ["<leader>O"] = { "[<space>o", "insert 2 newlines up into insert mode", opts = { remap = true } },
 
     -- Window Splits
     ["ss"] = { ":split<Return><C-w>w", "vertical window split" },
