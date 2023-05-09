@@ -8,6 +8,8 @@ M.ui = {
   theme = "catppuccin",
   theme_toggle = { "tokyonight", "catppuccin" },
 
+  transparency = true,
+
   hl_override = highlights.override,
   hl_add = highlights.add,
 
