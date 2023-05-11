@@ -1,0 +1,14 @@
+
+2023/05/11 (12:58:44) | ===> btop++ v.1.2.13
+2023/05/11 (12:58:44) | ERROR: Invalid hex value: 40a02b
+theme[temp_mid]=
+2023/05/11 (12:58:45) | ERROR: Invalid hex value: 89dceb
+
+# Process box color gradient for threads, mem and cpu usage (Sapphire -> Mauve)
+theme[process_start]=
+2023/05/11 (12:58:48) | ERROR: Invalid hex value: 89dceb
+
+# Process box color gradient for threads, mem and cpu usage (Sapphire -> Mauve)
+theme[process_start]=
+2023/05/11 (12:58:49) | ERROR: Invalid hex value: 40a02b
+theme[temp_mid]=
