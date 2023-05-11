@@ -5,7 +5,7 @@ M.general = {
   n = {
     -- 2 newlines up/down into insert with vim-unimpaired
     ["<leader>o"] = { "]<space>o", "insert 2 newlines down into insert mode", opts = { remap = true } },
-    ["<leader>O"] = { "[<space>o", "insert 2 newlines up into insert mode", opts = { remap = true } },
+    ["<leader>O"] = { "[<space>O", "insert 2 newlines up into insert mode", opts = { remap = true } },
 
     -- Window Splits
     ["ss"] = { ":split<Return><C-w>w", "vertical window split" },
