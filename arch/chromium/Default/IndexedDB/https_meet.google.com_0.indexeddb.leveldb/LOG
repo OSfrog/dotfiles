@@ -1,0 +1,7 @@
+2023/05/10-13:00:54.924 43a5 Reusing MANIFEST /home/yunglee/.config/chromium/Default/IndexedDB/https_meet.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/05/10-13:00:54.924 43a5 Recovering log #3
+2023/05/10-13:00:54.924 43a5 Reusing old log /home/yunglee/.config/chromium/Default/IndexedDB/https_meet.google.com_0.indexeddb.leveldb/000003.log 
+2023/05/10-13:31:45.136 72cd Level-0 table #5: started
+2023/05/10-13:31:45.142 72cd Level-0 table #5: 7754 bytes OK
+2023/05/10-13:31:45.147 72cd Delete type=0 #3
+2023/05/10-13:31:45.147 72cd Manual compaction at level-0 from (begin) .. (end); will stop at (end)

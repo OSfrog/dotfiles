@@ -1,0 +1,15 @@
+2023/05/12-15:02:23.615 3 Reusing MANIFEST /home/yunglee/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2023/05/12-15:02:23.616 3 Recovering log #148
+2023/05/12-15:02:23.616 3 Reusing old log /home/yunglee/.config/chromium/Default/Local Storage/leveldb/000148.log 
+2023/05/12-15:02:53.696 3 Level-0 table #152: started
+2023/05/12-15:02:53.716 3 Level-0 table #152: 177848 bytes OK
+2023/05/12-15:02:53.725 3 Delete type=0 #148
+2023/05/12-15:02:53.727 3 Compacting 4@0 + 1@1 files
+2023/05/12-15:02:53.751 3 Generated table #153@0: 708 keys, 799648 bytes
+2023/05/12-15:02:53.751 3 Compacted 4@0 + 1@1 files => 799648 bytes
+2023/05/12-15:02:53.756 3 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/05/12-15:02:53.757 3 Delete type=2 #146
+2023/05/12-15:02:53.757 3 Delete type=2 #149
+2023/05/12-15:02:53.757 3 Delete type=2 #152
+2023/05/12-15:02:53.757 3 Delete type=2 #142
+2023/05/12-15:02:53.757 3 Delete type=2 #144

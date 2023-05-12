@@ -1,0 +1,43 @@
+image=/home/yunglee/Desktop/wallpapers/swaylock3.png
+daemonize
+show-failed-attempts
+#screenshot
+effect-blur=5x5
+effect-vignette=0.5:0.5
+#color=1f1d2e80
+font="JetBrains Mono Nerd Font"
+
+line-color= #1f1d2e
+ring-color= #191724
+inside-color= #1f1d2e
+key-hl-color=babbf1
+separator-color=00000000
+text-color=f2d5cf
+line-ver-color= #eb6f92
+ring-ver-color= #eb6f92
+inside-ver-color= #1f1d2e
+text-ver-color=e5c890
+line-wrong-color= #1f1d2e
+ring-wrong-color= #31748f
+text-wrong-color=e78284
+inside-wrong-color= #1f1d2e
+inside-clear-color= #1f1d2e
+text-clear-color=e0def4
+ring-clear-color= #9ccfd8
+line-clear-color= #1f1d2e
+bs-hl-color=8caaee
+
+scaling=fill
+indicator
+indicator-radius=200
+indicator-thickness=10
+clock
+datestr=%a, %B %e
+timestr=%H:%M
+#grace=2
+grace-no-mouse
+grace-no-touch
+fade-in=0.2
+ignore-empty-password
+hide-keyboard-layout
+disable-caps-lock-text

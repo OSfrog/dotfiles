@@ -1,0 +1,6 @@
+2023/05/12-10:06:49.954 7fa Reusing MANIFEST /home/yunglee/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2023/05/12-10:06:49.955 7fa Recovering log #22
+2023/05/12-10:06:49.955 7fa Reusing old log /home/yunglee/.config/discord/Local Storage/leveldb/000022.log 
+2023/05/12-12:38:06.796 fad Level-0 table #26: started
+2023/05/12-12:38:06.827 fad Level-0 table #26: 1607570 bytes OK
+2023/05/12-12:38:06.832 fad Delete type=0 #22

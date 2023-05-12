@@ -1,0 +1,6 @@
+2023/05/11-22:08:40.459 156a Reusing MANIFEST /home/yunglee/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2023/05/11-22:08:40.460 156a Recovering log #17
+2023/05/11-22:08:40.460 156a Reusing old log /home/yunglee/.config/discord/Local Storage/leveldb/000017.log 
+2023/05/11-22:34:02.931 156a Level-0 table #23: started
+2023/05/11-22:34:02.981 156a Level-0 table #23: 1599926 bytes OK
+2023/05/11-22:34:02.986 156a Delete type=0 #17

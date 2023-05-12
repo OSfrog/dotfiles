@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/fish
+#!/usr/bin/env fish
 
 # Define source and destination directories
 set src "../../nvim/custom/"

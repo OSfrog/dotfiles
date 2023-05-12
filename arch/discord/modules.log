@@ -1,0 +1,713 @@
+2023-05-08T17:23:57.259Z [Modules] Modules initializing
+2023-05-08T17:23:57.259Z [Modules] Distribution: remote
+2023-05-08T17:23:57.259Z [Modules] Host updates: enabled
+2023-05-08T17:23:57.259Z [Modules] Module updates: enabled
+2023-05-08T17:23:57.259Z [Modules] Module install path: /home/yunglee/.config/discord/0.0.27/modules
+2023-05-08T17:23:57.259Z [Modules] Module installed file path: /home/yunglee/.config/discord/0.0.27/modules/installed.json
+2023-05-08T17:23:57.260Z [Modules] Module download path: /home/yunglee/.config/discord/0.0.27/modules/pending
+2023-05-08T17:23:57.535Z [Modules] Bootstrapping...
+2023-05-08T17:23:57.536Z [Modules] Installing discord_desktop_core@0 from /usr/lib/discord/bootstrap/discord_desktop_core.zip
+2023-05-08T17:23:57.541Z [Modules] Failed installing discord_desktop_core@0: Error: ENOENT: no such file or directory, open '/usr/lib/discord/bootstrap/discord_desktop_core.zip'
+2023-05-08T17:23:57.542Z [Modules] Installing discord_erlpack@0 from /usr/lib/discord/bootstrap/discord_erlpack.zip
+2023-05-08T17:23:57.544Z [Modules] Failed installing discord_erlpack@0: Error: ENOENT: no such file or directory, open '/usr/lib/discord/bootstrap/discord_erlpack.zip'
+2023-05-08T17:23:57.544Z [Modules] Installing discord_spellcheck@0 from /usr/lib/discord/bootstrap/discord_spellcheck.zip
+2023-05-08T17:23:57.546Z [Modules] Failed installing discord_spellcheck@0: Error: ENOENT: no such file or directory, open '/usr/lib/discord/bootstrap/discord_spellcheck.zip'
+2023-05-08T17:23:57.552Z [Modules] Installing discord_utils@0 from /usr/lib/discord/bootstrap/discord_utils.zip
+2023-05-08T17:23:57.553Z [Modules] Failed installing discord_utils@0: Error: ENOENT: no such file or directory, open '/usr/lib/discord/bootstrap/discord_utils.zip'
+2023-05-08T17:23:57.553Z [Modules] Installing discord_voice@0 from /usr/lib/discord/bootstrap/discord_voice.zip
+2023-05-08T17:23:57.554Z [Modules] Failed installing discord_voice@0: Error: ENOENT: no such file or directory, open '/usr/lib/discord/bootstrap/discord_voice.zip'
+2023-05-08T17:23:57.554Z [Modules] Finished module installations. [success: 0] [failure: 5]
+2023-05-08T17:23:57.554Z [Modules] Checking for host updates.
+2023-05-08T17:24:05.830Z [Modules] Host update failed: Error: getaddrinfo ENOTFOUND discord.com
+2023-05-08T17:24:15.842Z [Modules] Checking for host updates.
+2023-05-08T17:24:18.687Z [Modules] Host is up to date.
+2023-05-08T17:24:18.688Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-08T17:24:18.732Z [Modules] Module update available: discord_desktop_core@1 [installed: 0]
+2023-05-08T17:24:18.733Z [Modules] Module update available: discord_erlpack@1 [installed: 0]
+2023-05-08T17:24:18.733Z [Modules] Module update available: discord_spellcheck@1 [installed: 0]
+2023-05-08T17:24:18.733Z [Modules] Module update available: discord_utils@1 [installed: 0]
+2023-05-08T17:24:18.733Z [Modules] Module update available: discord_voice@1 [installed: 0]
+2023-05-08T17:24:18.735Z [Modules] Fetching discord_desktop_core@1 from https://discord.com/api/modules/stable/discord_desktop_core/1
+2023-05-08T17:24:18.735Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip
+2023-05-08T17:24:19.012Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 3%
+2023-05-08T17:24:19.021Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 5%
+2023-05-08T17:24:19.030Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 7%
+2023-05-08T17:24:19.037Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 8%
+2023-05-08T17:24:19.039Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 10%
+2023-05-08T17:24:19.044Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 12%
+2023-05-08T17:24:19.051Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 14%
+2023-05-08T17:24:19.056Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 19%
+2023-05-08T17:24:19.059Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 20%
+2023-05-08T17:24:19.062Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 23%
+2023-05-08T17:24:19.066Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 24%
+2023-05-08T17:24:19.068Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 26%
+2023-05-08T17:24:19.076Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 29%
+2023-05-08T17:24:19.079Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 31%
+2023-05-08T17:24:19.081Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 34%
+2023-05-08T17:24:19.087Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 35%
+2023-05-08T17:24:19.090Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 37%
+2023-05-08T17:24:19.093Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 39%
+2023-05-08T17:24:19.096Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 41%
+2023-05-08T17:24:19.099Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 42%
+2023-05-08T17:24:19.101Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 44%
+2023-05-08T17:24:19.110Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 49%
+2023-05-08T17:24:19.112Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 50%
+2023-05-08T17:24:19.116Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 51%
+2023-05-08T17:24:19.119Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 54%
+2023-05-08T17:24:19.122Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 56%
+2023-05-08T17:24:19.124Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 58%
+2023-05-08T17:24:19.129Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 60%
+2023-05-08T17:24:19.132Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 62%
+2023-05-08T17:24:19.137Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 63%
+2023-05-08T17:24:19.140Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 66%
+2023-05-08T17:24:19.145Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 67%
+2023-05-08T17:24:19.154Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 69%
+2023-05-08T17:24:19.157Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 72%
+2023-05-08T17:24:19.164Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 73%
+2023-05-08T17:24:19.166Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 75%
+2023-05-08T17:24:19.169Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 77%
+2023-05-08T17:24:19.171Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 80%
+2023-05-08T17:24:19.176Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 83%
+2023-05-08T17:24:19.183Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 87%
+2023-05-08T17:24:19.190Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 91%
+2023-05-08T17:24:19.200Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 94%
+2023-05-08T17:24:19.202Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 97%
+2023-05-08T17:24:19.207Z [Modules] Streaming discord_desktop_core@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip: 100%
+2023-05-08T17:24:19.210Z [Modules] Fetching discord_erlpack@1 from https://discord.com/api/modules/stable/discord_erlpack/1
+2023-05-08T17:24:19.210Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip
+2023-05-08T17:24:19.408Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 3%
+2023-05-08T17:24:19.415Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 7%
+2023-05-08T17:24:19.418Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 9%
+2023-05-08T17:24:19.421Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 11%
+2023-05-08T17:24:19.425Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 14%
+2023-05-08T17:24:19.428Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 16%
+2023-05-08T17:24:19.437Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 18%
+2023-05-08T17:24:19.439Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 19%
+2023-05-08T17:24:19.448Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 21%
+2023-05-08T17:24:19.455Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 23%
+2023-05-08T17:24:19.465Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 24%
+2023-05-08T17:24:19.469Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 25%
+2023-05-08T17:24:19.471Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 26%
+2023-05-08T17:24:19.474Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 28%
+2023-05-08T17:24:19.481Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 31%
+2023-05-08T17:24:19.482Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 32%
+2023-05-08T17:24:19.486Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 34%
+2023-05-08T17:24:19.496Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 37%
+2023-05-08T17:24:19.498Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 38%
+2023-05-08T17:24:19.502Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 40%
+2023-05-08T17:24:19.507Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 42%
+2023-05-08T17:24:19.511Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 44%
+2023-05-08T17:24:19.518Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 46%
+2023-05-08T17:24:19.520Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 48%
+2023-05-08T17:24:19.523Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 49%
+2023-05-08T17:24:19.524Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 50%
+2023-05-08T17:24:19.534Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 52%
+2023-05-08T17:24:19.539Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 54%
+2023-05-08T17:24:19.542Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 56%
+2023-05-08T17:24:19.547Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 57%
+2023-05-08T17:24:19.549Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 59%
+2023-05-08T17:24:19.557Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 61%
+2023-05-08T17:24:19.559Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 62%
+2023-05-08T17:24:19.569Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 64%
+2023-05-08T17:24:19.570Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 66%
+2023-05-08T17:24:19.573Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 68%
+2023-05-08T17:24:19.576Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 70%
+2023-05-08T17:24:19.579Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 71%
+2023-05-08T17:24:19.581Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 73%
+2023-05-08T17:24:19.585Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 77%
+2023-05-08T17:24:19.592Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 80%
+2023-05-08T17:24:19.602Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 83%
+2023-05-08T17:24:19.604Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 85%
+2023-05-08T17:24:19.608Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 87%
+2023-05-08T17:24:19.613Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 88%
+2023-05-08T17:24:19.625Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 89%
+2023-05-08T17:24:19.631Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 92%
+2023-05-08T17:24:19.633Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 94%
+2023-05-08T17:24:19.637Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 96%
+2023-05-08T17:24:19.644Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 98%
+2023-05-08T17:24:19.653Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 99%
+2023-05-08T17:24:19.654Z [Modules] Streaming discord_erlpack@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip: 100%
+2023-05-08T17:24:19.664Z [Modules] Fetching discord_spellcheck@1 from https://discord.com/api/modules/stable/discord_spellcheck/1
+2023-05-08T17:24:19.665Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip
+2023-05-08T17:24:19.866Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 1%
+2023-05-08T17:24:19.881Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 2%
+2023-05-08T17:24:19.888Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 3%
+2023-05-08T17:24:19.898Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 4%
+2023-05-08T17:24:19.906Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 5%
+2023-05-08T17:24:19.917Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 6%
+2023-05-08T17:24:19.928Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 7%
+2023-05-08T17:24:19.937Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 8%
+2023-05-08T17:24:19.943Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 9%
+2023-05-08T17:24:19.979Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 10%
+2023-05-08T17:24:19.988Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 11%
+2023-05-08T17:24:20.004Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 12%
+2023-05-08T17:24:20.010Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 13%
+2023-05-08T17:24:20.024Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 14%
+2023-05-08T17:24:20.030Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 15%
+2023-05-08T17:24:20.040Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 16%
+2023-05-08T17:24:20.052Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 17%
+2023-05-08T17:24:20.070Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 18%
+2023-05-08T17:24:20.083Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 19%
+2023-05-08T17:24:20.091Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 20%
+2023-05-08T17:24:20.100Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 21%
+2023-05-08T17:24:20.110Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 22%
+2023-05-08T17:24:20.118Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 23%
+2023-05-08T17:24:20.160Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 24%
+2023-05-08T17:24:20.181Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 25%
+2023-05-08T17:24:20.188Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 26%
+2023-05-08T17:24:20.201Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 27%
+2023-05-08T17:24:20.224Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 28%
+2023-05-08T17:24:20.236Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 29%
+2023-05-08T17:24:20.243Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 30%
+2023-05-08T17:24:20.284Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 31%
+2023-05-08T17:24:20.291Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 32%
+2023-05-08T17:24:20.301Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 33%
+2023-05-08T17:24:20.311Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 34%
+2023-05-08T17:24:20.321Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 35%
+2023-05-08T17:24:20.330Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 36%
+2023-05-08T17:24:20.340Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 37%
+2023-05-08T17:24:20.353Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 38%
+2023-05-08T17:24:20.402Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 39%
+2023-05-08T17:24:20.406Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 40%
+2023-05-08T17:24:20.415Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 41%
+2023-05-08T17:24:20.458Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 42%
+2023-05-08T17:24:20.480Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 43%
+2023-05-08T17:24:20.496Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 44%
+2023-05-08T17:24:20.505Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 45%
+2023-05-08T17:24:20.540Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 46%
+2023-05-08T17:24:20.551Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 47%
+2023-05-08T17:24:20.562Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 48%
+2023-05-08T17:24:20.599Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 49%
+2023-05-08T17:24:20.611Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 50%
+2023-05-08T17:24:20.620Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 51%
+2023-05-08T17:24:20.660Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 52%
+2023-05-08T17:24:20.676Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 53%
+2023-05-08T17:24:20.694Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 54%
+2023-05-08T17:24:20.705Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 55%
+2023-05-08T17:24:20.715Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 56%
+2023-05-08T17:24:20.756Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 57%
+2023-05-08T17:24:20.769Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 58%
+2023-05-08T17:24:20.785Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 59%
+2023-05-08T17:24:20.799Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 60%
+2023-05-08T17:24:20.814Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 61%
+2023-05-08T17:24:20.821Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 62%
+2023-05-08T17:24:20.833Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 63%
+2023-05-08T17:24:20.841Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 64%
+2023-05-08T17:24:20.858Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 65%
+2023-05-08T17:24:20.874Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 66%
+2023-05-08T17:24:20.899Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 67%
+2023-05-08T17:24:20.908Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 68%
+2023-05-08T17:24:20.917Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 69%
+2023-05-08T17:24:20.938Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 70%
+2023-05-08T17:24:20.950Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 71%
+2023-05-08T17:24:20.960Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 72%
+2023-05-08T17:24:21.005Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 73%
+2023-05-08T17:24:21.014Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 74%
+2023-05-08T17:24:21.023Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 75%
+2023-05-08T17:24:21.031Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 76%
+2023-05-08T17:24:21.038Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 77%
+2023-05-08T17:24:21.058Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 78%
+2023-05-08T17:24:21.091Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 79%
+2023-05-08T17:24:21.106Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 80%
+2023-05-08T17:24:21.115Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 81%
+2023-05-08T17:24:21.122Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 82%
+2023-05-08T17:24:21.135Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 83%
+2023-05-08T17:24:21.176Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 84%
+2023-05-08T17:24:21.191Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 85%
+2023-05-08T17:24:21.208Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 86%
+2023-05-08T17:24:21.219Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 87%
+2023-05-08T17:24:21.224Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 88%
+2023-05-08T17:24:21.237Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 89%
+2023-05-08T17:24:21.245Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 90%
+2023-05-08T17:24:21.261Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 91%
+2023-05-08T17:24:21.308Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 92%
+2023-05-08T17:24:21.317Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 93%
+2023-05-08T17:24:21.330Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 94%
+2023-05-08T17:24:21.340Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 95%
+2023-05-08T17:24:21.349Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 96%
+2023-05-08T17:24:21.359Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 97%
+2023-05-08T17:24:21.401Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 98%
+2023-05-08T17:24:21.414Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 99%
+2023-05-08T17:24:21.422Z [Modules] Streaming discord_spellcheck@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip: 100%
+2023-05-08T17:24:21.426Z [Modules] Fetching discord_utils@1 from https://discord.com/api/modules/stable/discord_utils/1
+2023-05-08T17:24:21.426Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip
+2023-05-08T17:24:21.619Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 2%
+2023-05-08T17:24:21.621Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 3%
+2023-05-08T17:24:21.626Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 4%
+2023-05-08T17:24:21.628Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 5%
+2023-05-08T17:24:21.633Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 6%
+2023-05-08T17:24:21.637Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 9%
+2023-05-08T17:24:21.640Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 10%
+2023-05-08T17:24:21.647Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 11%
+2023-05-08T17:24:21.652Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 13%
+2023-05-08T17:24:21.656Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 15%
+2023-05-08T17:24:21.659Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 16%
+2023-05-08T17:24:21.663Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 17%
+2023-05-08T17:24:21.669Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 19%
+2023-05-08T17:24:21.672Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 20%
+2023-05-08T17:24:21.675Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 21%
+2023-05-08T17:24:21.676Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 22%
+2023-05-08T17:24:21.680Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 24%
+2023-05-08T17:24:21.691Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 25%
+2023-05-08T17:24:21.692Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 26%
+2023-05-08T17:24:21.698Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 27%
+2023-05-08T17:24:21.700Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 28%
+2023-05-08T17:24:21.707Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 29%
+2023-05-08T17:24:21.709Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 30%
+2023-05-08T17:24:21.716Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 31%
+2023-05-08T17:24:21.722Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 32%
+2023-05-08T17:24:21.724Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 33%
+2023-05-08T17:24:21.727Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 35%
+2023-05-08T17:24:21.732Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 37%
+2023-05-08T17:24:21.736Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 38%
+2023-05-08T17:24:21.741Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 39%
+2023-05-08T17:24:21.744Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 41%
+2023-05-08T17:24:21.748Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 42%
+2023-05-08T17:24:21.751Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 43%
+2023-05-08T17:24:21.756Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 45%
+2023-05-08T17:24:21.771Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 46%
+2023-05-08T17:24:21.774Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 48%
+2023-05-08T17:24:21.777Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 49%
+2023-05-08T17:24:21.781Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 50%
+2023-05-08T17:24:21.786Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 52%
+2023-05-08T17:24:21.787Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 53%
+2023-05-08T17:24:21.792Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 54%
+2023-05-08T17:24:21.796Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 56%
+2023-05-08T17:24:21.802Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 57%
+2023-05-08T17:24:21.810Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 58%
+2023-05-08T17:24:21.813Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 59%
+2023-05-08T17:24:21.819Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 60%
+2023-05-08T17:24:21.822Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 62%
+2023-05-08T17:24:21.823Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 63%
+2023-05-08T17:24:21.826Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 64%
+2023-05-08T17:24:21.830Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 65%
+2023-05-08T17:24:21.833Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 67%
+2023-05-08T17:24:21.836Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 68%
+2023-05-08T17:24:21.837Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 69%
+2023-05-08T17:24:21.839Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 70%
+2023-05-08T17:24:21.841Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 71%
+2023-05-08T17:24:21.844Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 72%
+2023-05-08T17:24:21.850Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 75%
+2023-05-08T17:24:21.855Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 77%
+2023-05-08T17:24:21.856Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 78%
+2023-05-08T17:24:21.860Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 79%
+2023-05-08T17:24:21.864Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 80%
+2023-05-08T17:24:21.867Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 81%
+2023-05-08T17:24:21.871Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 82%
+2023-05-08T17:24:21.874Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 84%
+2023-05-08T17:24:21.878Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 85%
+2023-05-08T17:24:21.882Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 87%
+2023-05-08T17:24:21.888Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 89%
+2023-05-08T17:24:21.893Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 90%
+2023-05-08T17:24:21.900Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 91%
+2023-05-08T17:24:21.905Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 92%
+2023-05-08T17:24:21.913Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 93%
+2023-05-08T17:24:21.927Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 96%
+2023-05-08T17:24:21.932Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 98%
+2023-05-08T17:24:21.934Z [Modules] Streaming discord_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip: 100%
+2023-05-08T17:24:21.939Z [Modules] Fetching discord_voice@1 from https://discord.com/api/modules/stable/discord_voice/1
+2023-05-08T17:24:21.939Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip
+2023-05-08T17:24:22.142Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 1%
+2023-05-08T17:24:22.158Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 2%
+2023-05-08T17:24:22.188Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 3%
+2023-05-08T17:24:22.210Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 4%
+2023-05-08T17:24:22.241Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 5%
+2023-05-08T17:24:22.257Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 6%
+2023-05-08T17:24:22.283Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 7%
+2023-05-08T17:24:22.307Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 8%
+2023-05-08T17:24:22.346Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 9%
+2023-05-08T17:24:22.369Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 10%
+2023-05-08T17:24:22.392Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 11%
+2023-05-08T17:24:22.444Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 12%
+2023-05-08T17:24:22.463Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 13%
+2023-05-08T17:24:22.516Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 14%
+2023-05-08T17:24:22.549Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 15%
+2023-05-08T17:24:22.572Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 16%
+2023-05-08T17:24:22.593Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 17%
+2023-05-08T17:24:22.622Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 18%
+2023-05-08T17:24:22.668Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 19%
+2023-05-08T17:24:22.693Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 20%
+2023-05-08T17:24:22.732Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 21%
+2023-05-08T17:24:22.763Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 22%
+2023-05-08T17:24:22.816Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 23%
+2023-05-08T17:24:22.848Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 24%
+2023-05-08T17:24:22.868Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 25%
+2023-05-08T17:24:22.896Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 26%
+2023-05-08T17:24:22.939Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 27%
+2023-05-08T17:24:22.959Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 28%
+2023-05-08T17:24:22.975Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 29%
+2023-05-08T17:24:23.051Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 30%
+2023-05-08T17:24:23.061Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 31%
+2023-05-08T17:24:23.105Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 32%
+2023-05-08T17:24:23.121Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 33%
+2023-05-08T17:24:23.170Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 34%
+2023-05-08T17:24:23.237Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 35%
+2023-05-08T17:24:23.270Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 36%
+2023-05-08T17:24:23.309Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 37%
+2023-05-08T17:24:23.356Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 38%
+2023-05-08T17:24:23.378Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 39%
+2023-05-08T17:24:23.396Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 40%
+2023-05-08T17:24:23.458Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 41%
+2023-05-08T17:24:23.472Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 42%
+2023-05-08T17:24:23.517Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 43%
+2023-05-08T17:24:23.542Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 44%
+2023-05-08T17:24:23.582Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 45%
+2023-05-08T17:24:23.597Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 46%
+2023-05-08T17:24:23.646Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 47%
+2023-05-08T17:24:23.673Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 48%
+2023-05-08T17:24:23.691Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 49%
+2023-05-08T17:24:23.749Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 50%
+2023-05-08T17:24:23.777Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 51%
+2023-05-08T17:24:23.798Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 52%
+2023-05-08T17:24:23.848Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 53%
+2023-05-08T17:24:23.874Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 54%
+2023-05-08T17:24:23.888Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 55%
+2023-05-08T17:24:23.933Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 56%
+2023-05-08T17:24:23.980Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 57%
+2023-05-08T17:24:23.994Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 58%
+2023-05-08T17:24:24.052Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 59%
+2023-05-08T17:24:24.077Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 60%
+2023-05-08T17:24:24.109Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 61%
+2023-05-08T17:24:24.155Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 62%
+2023-05-08T17:24:24.222Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 63%
+2023-05-08T17:24:24.239Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 64%
+2023-05-08T17:24:24.279Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 65%
+2023-05-08T17:24:24.296Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 66%
+2023-05-08T17:24:24.341Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 67%
+2023-05-08T17:24:24.381Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 68%
+2023-05-08T17:24:24.397Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 69%
+2023-05-08T17:24:24.415Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 70%
+2023-05-08T17:24:24.446Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 71%
+2023-05-08T17:24:24.484Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 72%
+2023-05-08T17:24:24.501Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 73%
+2023-05-08T17:24:24.521Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 74%
+2023-05-08T17:24:24.542Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 75%
+2023-05-08T17:24:24.560Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 76%
+2023-05-08T17:24:24.596Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 77%
+2023-05-08T17:24:24.610Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 78%
+2023-05-08T17:24:24.627Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 79%
+2023-05-08T17:24:24.651Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 80%
+2023-05-08T17:24:24.692Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 81%
+2023-05-08T17:24:24.704Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 82%
+2023-05-08T17:24:24.721Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 83%
+2023-05-08T17:24:24.738Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 84%
+2023-05-08T17:24:24.760Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 85%
+2023-05-08T17:24:24.782Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 86%
+2023-05-08T17:24:24.806Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 87%
+2023-05-08T17:24:24.823Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 88%
+2023-05-08T17:24:24.847Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 89%
+2023-05-08T17:24:24.866Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 90%
+2023-05-08T17:24:24.891Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 91%
+2023-05-08T17:24:24.908Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 92%
+2023-05-08T17:24:24.929Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 93%
+2023-05-08T17:24:24.947Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 94%
+2023-05-08T17:24:24.973Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 95%
+2023-05-08T17:24:24.999Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 96%
+2023-05-08T17:24:25.010Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 97%
+2023-05-08T17:24:25.024Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 98%
+2023-05-08T17:24:25.049Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 99%
+2023-05-08T17:24:25.058Z [Modules] Streaming discord_voice@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip: 100%
+2023-05-08T17:24:25.061Z [Modules] Finished module downloads. [success: 5] [failure: 0]
+2023-05-08T17:24:25.062Z [Modules] Installing updates...
+2023-05-08T17:24:25.063Z [Modules] Installing discord_desktop_core@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_desktop_core-1.zip
+2023-05-08T17:24:25.233Z [Modules] Installing discord_erlpack@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_erlpack-1.zip
+2023-05-08T17:24:25.337Z [Modules] Installing discord_spellcheck@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_spellcheck-1.zip
+2023-05-08T17:24:26.341Z [Modules] Installing discord_utils@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_utils-1.zip
+2023-05-08T17:24:26.906Z [Modules] Installing discord_voice@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_voice-1.zip
+2023-05-08T17:24:28.003Z [Modules] Finished module installations. [success: 5] [failure: 0]
+2023-05-08T17:24:28.004Z [Modules] Checking for host updates.
+2023-05-08T17:24:28.172Z [Modules] Host is up to date.
+2023-05-08T17:24:28.172Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-08T17:24:28.184Z [Modules] No module updates available.
+2023-05-08T17:24:30.225Z [Modules] Starting to install discord_krisp...
+2023-05-08T17:24:30.226Z [Modules] Fetching discord_krisp@1 from https://discord.com/api/modules/stable/discord_krisp/1
+2023-05-08T17:24:30.227Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip
+2023-05-08T17:24:30.411Z [Modules] Starting to install discord_game_utils...
+2023-05-08T17:24:30.437Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 1%
+2023-05-08T17:24:30.458Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 2%
+2023-05-08T17:24:30.487Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 3%
+2023-05-08T17:24:30.524Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 4%
+2023-05-08T17:24:30.549Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 5%
+2023-05-08T17:24:30.567Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 6%
+2023-05-08T17:24:30.607Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 7%
+2023-05-08T17:24:30.640Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 8%
+2023-05-08T17:24:30.683Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 9%
+2023-05-08T17:24:30.701Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 10%
+2023-05-08T17:24:30.831Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 11%
+2023-05-08T17:24:30.907Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 12%
+2023-05-08T17:24:30.934Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 13%
+2023-05-08T17:24:30.946Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 14%
+2023-05-08T17:24:30.961Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 15%
+2023-05-08T17:24:30.973Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 16%
+2023-05-08T17:24:30.982Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 17%
+2023-05-08T17:24:30.991Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 18%
+2023-05-08T17:24:31.003Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 19%
+2023-05-08T17:24:31.038Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 20%
+2023-05-08T17:24:31.065Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 21%
+2023-05-08T17:24:31.080Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 22%
+2023-05-08T17:24:31.105Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 23%
+2023-05-08T17:24:31.154Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 24%
+2023-05-08T17:24:31.183Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 25%
+2023-05-08T17:24:31.215Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 26%
+2023-05-08T17:24:31.258Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 27%
+2023-05-08T17:24:31.301Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 28%
+2023-05-08T17:24:31.365Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 29%
+2023-05-08T17:24:31.396Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 30%
+2023-05-08T17:24:31.438Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 31%
+2023-05-08T17:24:31.473Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 32%
+2023-05-08T17:24:31.503Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 33%
+2023-05-08T17:24:31.555Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 34%
+2023-05-08T17:24:31.582Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 35%
+2023-05-08T17:24:31.617Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 36%
+2023-05-08T17:24:31.668Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 37%
+2023-05-08T17:24:31.704Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 38%
+2023-05-08T17:24:31.743Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 39%
+2023-05-08T17:24:31.784Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 40%
+2023-05-08T17:24:31.791Z [Modules] Checking for host updates.
+2023-05-08T17:24:31.815Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 41%
+2023-05-08T17:24:31.863Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 42%
+2023-05-08T17:24:31.886Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 43%
+2023-05-08T17:24:31.920Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 44%
+2023-05-08T17:24:31.966Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 45%
+2023-05-08T17:24:31.999Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 46%
+2023-05-08T17:24:32.004Z [Modules] Host is up to date.
+2023-05-08T17:24:32.004Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-08T17:24:32.017Z [Modules] No module updates available.
+2023-05-08T17:24:32.030Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 47%
+2023-05-08T17:24:32.071Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 48%
+2023-05-08T17:24:32.097Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 49%
+2023-05-08T17:24:32.153Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 50%
+2023-05-08T17:24:32.156Z [Modules] Starting to install discord_rpc...
+2023-05-08T17:24:32.189Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 51%
+2023-05-08T17:24:32.228Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 52%
+2023-05-08T17:24:32.297Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 53%
+2023-05-08T17:24:32.358Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 54%
+2023-05-08T17:24:32.396Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 55%
+2023-05-08T17:24:32.474Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 56%
+2023-05-08T17:24:32.504Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 57%
+2023-05-08T17:24:32.533Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 58%
+2023-05-08T17:24:32.598Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 59%
+2023-05-08T17:24:32.643Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 60%
+2023-05-08T17:24:32.704Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 61%
+2023-05-08T17:24:32.732Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 62%
+2023-05-08T17:24:32.779Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 63%
+2023-05-08T17:24:32.805Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 64%
+2023-05-08T17:24:32.837Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 65%
+2023-05-08T17:24:32.881Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 66%
+2023-05-08T17:24:32.902Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 67%
+2023-05-08T17:24:32.923Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 68%
+2023-05-08T17:24:32.953Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 69%
+2023-05-08T17:24:32.987Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 70%
+2023-05-08T17:24:33.012Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 71%
+2023-05-08T17:24:33.038Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 72%
+2023-05-08T17:24:33.084Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 73%
+2023-05-08T17:24:33.107Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 74%
+2023-05-08T17:24:33.134Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 75%
+2023-05-08T17:24:33.173Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 76%
+2023-05-08T17:24:33.206Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 77%
+2023-05-08T17:24:33.244Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 78%
+2023-05-08T17:24:33.329Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 79%
+2023-05-08T17:24:33.355Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 80%
+2023-05-08T17:24:33.398Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 81%
+2023-05-08T17:24:33.418Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 82%
+2023-05-08T17:24:33.445Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 83%
+2023-05-08T17:24:33.474Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 84%
+2023-05-08T17:24:33.507Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 85%
+2023-05-08T17:24:33.525Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 86%
+2023-05-08T17:24:33.569Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 87%
+2023-05-08T17:24:33.602Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 88%
+2023-05-08T17:24:33.631Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 89%
+2023-05-08T17:24:33.654Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 90%
+2023-05-08T17:24:33.683Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 91%
+2023-05-08T17:24:33.728Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 92%
+2023-05-08T17:24:33.756Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 93%
+2023-05-08T17:24:33.784Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 94%
+2023-05-08T17:24:33.819Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 95%
+2023-05-08T17:24:33.839Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 96%
+2023-05-08T17:24:33.877Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 97%
+2023-05-08T17:24:33.921Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 98%
+2023-05-08T17:24:33.938Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 99%
+2023-05-08T17:24:33.966Z [Modules] Streaming discord_krisp@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip: 100%
+2023-05-08T17:24:33.971Z [Modules] Fetching discord_game_utils@1 from https://discord.com/api/modules/stable/discord_game_utils/1
+2023-05-08T17:24:33.972Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip
+2023-05-08T17:24:33.972Z [Modules] Installing discord_krisp@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_krisp-1.zip
+2023-05-08T17:24:34.169Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 1%
+2023-05-08T17:24:34.171Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 3%
+2023-05-08T17:24:34.175Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 4%
+2023-05-08T17:24:34.178Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 5%
+2023-05-08T17:24:34.183Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 6%
+2023-05-08T17:24:34.188Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 7%
+2023-05-08T17:24:34.201Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 9%
+2023-05-08T17:24:34.214Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 10%
+2023-05-08T17:24:34.217Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 11%
+2023-05-08T17:24:34.224Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 13%
+2023-05-08T17:24:34.232Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 15%
+2023-05-08T17:24:34.234Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 16%
+2023-05-08T17:24:34.238Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 17%
+2023-05-08T17:24:34.240Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 19%
+2023-05-08T17:24:34.243Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 20%
+2023-05-08T17:24:34.246Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 21%
+2023-05-08T17:24:34.249Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 22%
+2023-05-08T17:24:34.251Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 23%
+2023-05-08T17:24:34.253Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 25%
+2023-05-08T17:24:34.261Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 26%
+2023-05-08T17:24:34.264Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 27%
+2023-05-08T17:24:34.268Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 29%
+2023-05-08T17:24:34.271Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 31%
+2023-05-08T17:24:34.273Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 32%
+2023-05-08T17:24:34.277Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 33%
+2023-05-08T17:24:34.280Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 36%
+2023-05-08T17:24:34.295Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 37%
+2023-05-08T17:24:34.297Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 38%
+2023-05-08T17:24:34.304Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 39%
+2023-05-08T17:24:34.313Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 40%
+2023-05-08T17:24:34.316Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 42%
+2023-05-08T17:24:34.318Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 43%
+2023-05-08T17:24:34.320Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 44%
+2023-05-08T17:24:34.323Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 45%
+2023-05-08T17:24:34.333Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 46%
+2023-05-08T17:24:34.335Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 48%
+2023-05-08T17:24:34.341Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 49%
+2023-05-08T17:24:34.344Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 50%
+2023-05-08T17:24:34.348Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 52%
+2023-05-08T17:24:34.352Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 54%
+2023-05-08T17:24:34.354Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 55%
+2023-05-08T17:24:34.357Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 56%
+2023-05-08T17:24:34.363Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 57%
+2023-05-08T17:24:34.365Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 60%
+2023-05-08T17:24:34.370Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 62%
+2023-05-08T17:24:34.373Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 63%
+2023-05-08T17:24:34.375Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 64%
+2023-05-08T17:24:34.379Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 66%
+2023-05-08T17:24:34.383Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 68%
+2023-05-08T17:24:34.395Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 69%
+2023-05-08T17:24:34.398Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 70%
+2023-05-08T17:24:34.403Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 71%
+2023-05-08T17:24:34.406Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 72%
+2023-05-08T17:24:34.415Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 74%
+2023-05-08T17:24:34.417Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 76%
+2023-05-08T17:24:34.420Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 77%
+2023-05-08T17:24:34.422Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 78%
+2023-05-08T17:24:34.425Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 79%
+2023-05-08T17:24:34.428Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 80%
+2023-05-08T17:24:34.431Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 81%
+2023-05-08T17:24:34.434Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 82%
+2023-05-08T17:24:34.436Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 83%
+2023-05-08T17:24:34.439Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 84%
+2023-05-08T17:24:34.440Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 85%
+2023-05-08T17:24:34.444Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 86%
+2023-05-08T17:24:34.448Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 87%
+2023-05-08T17:24:34.572Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 89%
+2023-05-08T17:24:34.629Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 90%
+2023-05-08T17:24:34.632Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 91%
+2023-05-08T17:24:34.642Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 93%
+2023-05-08T17:24:34.665Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 95%
+2023-05-08T17:24:34.673Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 98%
+2023-05-08T17:24:34.674Z [Modules] Streaming discord_game_utils@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip: 100%
+2023-05-08T17:24:34.678Z [Modules] Fetching discord_rpc@1 from https://discord.com/api/modules/stable/discord_rpc/1
+2023-05-08T17:24:34.678Z [Modules] Streaming discord_rpc@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_rpc-1.zip
+2023-05-08T17:24:34.866Z [Modules] Streaming discord_rpc@1 to /home/yunglee/.config/discord/0.0.27/modules/pending/discord_rpc-1.zip: 100%
+2023-05-08T17:24:34.868Z [Modules] Finished module downloads. [success: 3] [failure: 0]
+2023-05-08T17:24:35.382Z [Modules] Installing discord_game_utils@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_game_utils-1.zip
+2023-05-08T17:24:35.480Z [Modules] Installing discord_rpc@1 from /home/yunglee/.config/discord/0.0.27/modules/pending/discord_rpc-1.zip
+2023-05-08T17:24:35.501Z [Modules] Finished module installations. [success: 3] [failure: 0]
+2023-05-08T18:24:31.799Z [Modules] Checking for host updates.
+2023-05-08T18:24:32.006Z [Modules] Host is up to date.
+2023-05-08T18:24:32.007Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-08T18:24:32.057Z [Modules] No module updates available.
+2023-05-09T19:36:52.902Z [Modules] Modules initializing
+2023-05-09T19:36:52.902Z [Modules] Distribution: remote
+2023-05-09T19:36:52.903Z [Modules] Host updates: enabled
+2023-05-09T19:36:52.903Z [Modules] Module updates: enabled
+2023-05-09T19:36:52.903Z [Modules] Module install path: /home/yunglee/.config/discord/0.0.27/modules
+2023-05-09T19:36:52.904Z [Modules] Module installed file path: /home/yunglee/.config/discord/0.0.27/modules/installed.json
+2023-05-09T19:36:52.904Z [Modules] Module download path: /home/yunglee/.config/discord/0.0.27/modules/pending
+2023-05-09T19:36:53.208Z [Modules] No updates to install
+2023-05-09T19:36:53.209Z [Modules] Checking for host updates.
+2023-05-09T19:36:53.424Z [Modules] Host is up to date.
+2023-05-09T19:36:53.425Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-09T19:36:53.500Z [Modules] No module updates available.
+2023-05-09T19:36:58.784Z [Modules] Checking for host updates.
+2023-05-09T19:36:58.948Z [Modules] Host is up to date.
+2023-05-09T19:36:58.948Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-09T19:36:58.953Z [Modules] No module updates available.
+2023-05-09T20:38:19.744Z [Modules] Modules initializing
+2023-05-09T20:38:19.744Z [Modules] Distribution: remote
+2023-05-09T20:38:19.744Z [Modules] Host updates: enabled
+2023-05-09T20:38:19.744Z [Modules] Module updates: enabled
+2023-05-09T20:38:19.744Z [Modules] Module install path: /home/yunglee/.config/discord/0.0.27/modules
+2023-05-09T20:38:19.744Z [Modules] Module installed file path: /home/yunglee/.config/discord/0.0.27/modules/installed.json
+2023-05-09T20:38:19.745Z [Modules] Module download path: /home/yunglee/.config/discord/0.0.27/modules/pending
+2023-05-09T20:38:19.973Z [Modules] No updates to install
+2023-05-09T20:38:19.973Z [Modules] Checking for host updates.
+2023-05-09T20:38:20.219Z [Modules] Host is up to date.
+2023-05-09T20:38:20.220Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-09T20:38:20.264Z [Modules] No module updates available.
+2023-05-09T20:38:23.209Z [Modules] Checking for host updates.
+2023-05-09T20:38:23.361Z [Modules] Host is up to date.
+2023-05-09T20:38:23.361Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-09T20:38:23.364Z [Modules] No module updates available.
+2023-05-09T21:38:23.217Z [Modules] Checking for host updates.
+2023-05-09T21:38:23.375Z [Modules] Host is up to date.
+2023-05-09T21:38:23.375Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-09T21:38:23.404Z [Modules] No module updates available.
+2023-05-11T09:28:24.076Z [Modules] Modules initializing
+2023-05-11T09:28:24.076Z [Modules] Distribution: remote
+2023-05-11T09:28:24.076Z [Modules] Host updates: enabled
+2023-05-11T09:28:24.076Z [Modules] Module updates: enabled
+2023-05-11T09:28:24.077Z [Modules] Module install path: /home/yunglee/.config/discord/0.0.27/modules
+2023-05-11T09:28:24.077Z [Modules] Module installed file path: /home/yunglee/.config/discord/0.0.27/modules/installed.json
+2023-05-11T09:28:24.077Z [Modules] Module download path: /home/yunglee/.config/discord/0.0.27/modules/pending
+2023-05-11T09:28:24.406Z [Modules] No updates to install
+2023-05-11T09:28:24.407Z [Modules] Checking for host updates.
+2023-05-11T09:28:24.694Z [Modules] Host is up to date.
+2023-05-11T09:28:24.696Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-11T09:28:24.738Z [Modules] No module updates available.
+2023-05-11T09:28:28.520Z [Modules] Checking for host updates.
+2023-05-11T09:28:28.670Z [Modules] Host is up to date.
+2023-05-11T09:28:28.671Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-11T09:28:28.680Z [Modules] No module updates available.
+2023-05-11T20:08:40.445Z [Modules] Modules initializing
+2023-05-11T20:08:40.445Z [Modules] Distribution: remote
+2023-05-11T20:08:40.446Z [Modules] Host updates: enabled
+2023-05-11T20:08:40.446Z [Modules] Module updates: enabled
+2023-05-11T20:08:40.446Z [Modules] Module install path: /home/yunglee/.config/discord/0.0.27/modules
+2023-05-11T20:08:40.446Z [Modules] Module installed file path: /home/yunglee/.config/discord/0.0.27/modules/installed.json
+2023-05-11T20:08:40.446Z [Modules] Module download path: /home/yunglee/.config/discord/0.0.27/modules/pending
+2023-05-11T20:08:40.762Z [Modules] No updates to install
+2023-05-11T20:08:40.763Z [Modules] Checking for host updates.
+2023-05-11T20:08:41.001Z [Modules] Host is up to date.
+2023-05-11T20:08:41.003Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-11T20:08:41.053Z [Modules] No module updates available.
+2023-05-11T20:08:44.627Z [Modules] Checking for host updates.
+2023-05-11T20:08:44.779Z [Modules] Host is up to date.
+2023-05-11T20:08:44.779Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-11T20:08:44.782Z [Modules] No module updates available.
+2023-05-12T08:06:49.937Z [Modules] Modules initializing
+2023-05-12T08:06:49.937Z [Modules] Distribution: remote
+2023-05-12T08:06:49.937Z [Modules] Host updates: enabled
+2023-05-12T08:06:49.937Z [Modules] Module updates: enabled
+2023-05-12T08:06:49.938Z [Modules] Module install path: /home/yunglee/.config/discord/0.0.27/modules
+2023-05-12T08:06:49.938Z [Modules] Module installed file path: /home/yunglee/.config/discord/0.0.27/modules/installed.json
+2023-05-12T08:06:49.938Z [Modules] Module download path: /home/yunglee/.config/discord/0.0.27/modules/pending
+2023-05-12T08:06:50.240Z [Modules] No updates to install
+2023-05-12T08:06:50.242Z [Modules] Checking for host updates.
+2023-05-12T08:06:50.511Z [Modules] Host is up to date.
+2023-05-12T08:06:50.513Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-12T08:06:50.576Z [Modules] No module updates available.
+2023-05-12T08:06:54.305Z [Modules] Checking for host updates.
+2023-05-12T08:06:54.461Z [Modules] Host is up to date.
+2023-05-12T08:06:54.461Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-12T08:06:54.464Z [Modules] No module updates available.
+2023-05-12T09:06:54.310Z [Modules] Checking for host updates.
+2023-05-12T09:06:54.474Z [Modules] Host is up to date.
+2023-05-12T09:06:54.474Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-12T09:06:54.507Z [Modules] No module updates available.
+2023-05-12T10:06:54.306Z [Modules] Checking for host updates.
+2023-05-12T10:06:54.470Z [Modules] Host is up to date.
+2023-05-12T10:06:54.470Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-12T10:06:54.506Z [Modules] No module updates available.
+2023-05-12T11:06:54.306Z [Modules] Checking for host updates.
+2023-05-12T11:06:54.468Z [Modules] Host is up to date.
+2023-05-12T11:06:54.469Z [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+2023-05-12T11:06:54.505Z [Modules] No module updates available.
