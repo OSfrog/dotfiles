@@ -103,4 +103,10 @@ M.telescope = {
 }
 -- more keybinds!
 
+M.lspsaga = {
+  n = {
+    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
+  },
+}
+
 return M

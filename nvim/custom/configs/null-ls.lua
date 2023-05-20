@@ -6,7 +6,8 @@ local code_actions = null_ls.builtins.code_actions
 
 local sources = {
   -- Code actions
-  code_actions.eslint_d,
+  -- code_actions.eslint,
+  code_actions.gitsigns,
 
   -- webdev stuff
   format.deno_fmt,
@@ -17,12 +18,17 @@ local sources = {
   -- Shell
   format.shfmt,
 
+  -- Fish
+  format.fish_indent,
+
   -- Prettier
   format.prettier.with { filetypes = { "html", "markdown", "css", "php" } },
 
   -- Diagnostics
   lint.php,
   lint.shellcheck,
+  lint.fish,
+  -- lint.eslint,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

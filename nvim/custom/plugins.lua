@@ -15,11 +15,24 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
+      {
+        "glepnir/lspsaga.nvim",
+        config = function()
+          require "custom.configs.lspsaga"
+        end,
+      },
     },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
+  },
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require "custom.configs.lspsaga"
+    end,
   },
 
   -- override plugin configs
@@ -40,6 +53,10 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline,
   },
 
   -- Install a plugin
