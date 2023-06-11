@@ -55,6 +55,9 @@ M.general = {
       ":<C-U>let old_reg=getreg('\"')<Bar>let old_regtype=getregtype('\"')<CR>gvy?<C-R><C-R>=substitute(escape(@\", '?\\.*$^~['), '\\_s\\+', '\\\\\\_s\\\\+', 'g')<CR><CR>gV:call setreg('\"', old_reg, old_regtype)<CR>",
       "search selected text backwards",
     },
+
+    -- Stop cursor from jumping back to starting point when yanking
+    ["y"] = { "ygv<esc>", "better yank" },
   },
 }
 

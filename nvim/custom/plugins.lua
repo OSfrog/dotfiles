@@ -34,6 +34,22 @@ local plugins = {
       require "custom.configs.lspsaga"
     end,
   },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+    },
+    opts = {
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+        { name = "nvim_lsp_signature_help" },
+      },
+    },
+  },
 
   -- override plugin configs
   {

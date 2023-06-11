@@ -6,8 +6,8 @@ local code_actions = null_ls.builtins.code_actions
 
 local sources = {
   -- Code actions
-  -- code_actions.eslint,
-  code_actions.gitsigns,
+  code_actions.eslint,
+  -- code_actions.gitsigns,
 
   -- webdev stuff
   format.deno_fmt,
