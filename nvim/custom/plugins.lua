@@ -39,16 +39,7 @@ local plugins = {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp-signature-help",
     },
-    opts = {
-      sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
-        { name = "path" },
-        { name = "nvim_lsp_signature_help" },
-      },
-    },
+    opts = overrides.cmp,
   },
 
   -- override plugin configs
