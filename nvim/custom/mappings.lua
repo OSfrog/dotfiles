@@ -61,10 +61,14 @@ M.general = {
   },
 }
 
-M.tabs = {
+M.tabufline = {
   n = {
-    -- Delete current buffer
-    ["<leader><C-w>"] = { ":bp\\|bd #<CR>", "delete current buffer" },
+    ["<leader>X"] = {
+      function()
+        require("nvchad_ui.tabufline").closeOtherBufs()
+      end,
+      "Close all buffers except current",
+    },
   },
 }
 
