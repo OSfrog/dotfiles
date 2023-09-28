@@ -65,7 +65,7 @@ M.tabufline = {
   n = {
     ["<leader>X"] = {
       function()
-        require("nvchad_ui.tabufline").closeOtherBufs()
+        require("nvchad.tabufline").closeOtherBufs()
       end,
       "Close all buffers except current",
     },
@@ -95,7 +95,7 @@ M.lspconfig = {
     },
     ["gR"] = {
       function()
-        require("nvchad_ui.renamer").open()
+        require("nvchad.renamer").open()
       end,
       "lsp rename",
     },

@@ -22,9 +22,10 @@ vim.cmd [[
   augroup END
 ]]
 
-vim.api.nvim_set_keymap(
-  "n",
-  "gb",
-  ':lua require("nvchad_ui.tabufline").pick_buffer()<CR>',
-  { noremap = true, silent = true }
-)
+-- Set filetype for .env files
+vim.cmd [[
+  augroup dotenv
+    autocmd!
+    autocmd BufRead,BufNewFile *.env set filetype=dotenv
+  augroup END
+]]

@@ -14,7 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "php",
   },
-  autotag = { enable = true },
+  autotag = { enable = true, enable_close_on_slash = false }, -- autotag issue, https://github.com/windwp/nvim-ts-autotag/issues/125
   indent = {
     enable = true,
     -- disable = {
