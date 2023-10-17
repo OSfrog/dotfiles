@@ -44,25 +44,6 @@ M.mason = {
 
 -- git support in nvimtree
 M.nvimtree = {
-  ensure_installed = {
-    "css",
-    "graphql",
-    "html",
-    "javascript",
-    "lua",
-    "php",
-    "python",
-    "scss",
-    "tsx",
-    "typescript",
-    "vim",
-    "vue",
-  },
-
-  context_commentstring = {
-    enable = true,
-  },
-
   git = {
     enable = true,
   },

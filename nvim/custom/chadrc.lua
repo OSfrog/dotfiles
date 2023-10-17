@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "catppuccin",
-  theme_toggle = { "tokyonight", "catppuccin" },
+  theme_toggle = { "gatekeeper", "gatekeeper" },
 
   transparency = true,
 
