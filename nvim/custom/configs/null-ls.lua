@@ -4,6 +4,20 @@ local format = null_ls.builtins.formatting
 local lint = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 
+local prettier_filetypes = {
+  "html",
+  "markdown",
+  "css",
+  "php",
+  "javascript",
+  "javascriptreact",
+  "typescript",
+  "typescriptreact",
+  "json",
+  "yaml",
+  "xml",
+}
+
 local sources = {
   -- Code actions
   code_actions.eslint,
@@ -21,8 +35,10 @@ local sources = {
   -- Fish
   format.fish_indent,
 
-  -- Prettier
-  format.prettier.with { filetypes = { "html", "markdown", "css", "php" } },
+  -- -- Prettier
+  -- format.prettierd.with {
+  --   filetypes = prettier_filetypes,
+  -- },
 
   -- Diagnostics
   lint.php,
@@ -43,7 +59,7 @@ null_ls.setup {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format()
+          vim.lsp.buf.format { bufnr = bufnr }
         end,
       })
     end

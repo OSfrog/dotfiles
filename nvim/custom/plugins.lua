@@ -1,4 +1,5 @@
 local overrides = require "custom.configs.overrides"
+local cmp_opt = require "custom.configs.cmp"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -36,12 +37,104 @@ local plugins = {
   },
   {
     "hrsh7th/nvim-cmp",
+    opts = cmp_opt.cmp,
     dependencies = {
+      "hrsh7th/cmp-copilot",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-    },
-    opts = overrides.cmp,
-  },
+      {
+        "zbirenbaum/copilot.lua",
+        event = "InsertEnter",
+        dependencies = {
+          {
+            "zbirenbaum/copilot-cmp",
+            config = function()
+              require("copilot").setup {
+                panel = {
+                  enabled = true,
+                  auto_refresh = true,
+                },
+                suggestion = {
+                  enabled = true,
+                  auto_trigger = true,
+                  accept = false, -- disable built-in keymapping
+                },
+                filetypes = {
+                  markdown = true,
+                  yaml = true,
+                },
+              }
 
+              -- hide copilot suggestions when cmp menu is open
+              -- to prevent odd behavior/garbled up suggestions
+              local cmp_status_ok, cmp = pcall(require, "cmp")
+              if cmp_status_ok then
+                cmp.event:on("menu_opened", function()
+                  vim.b.copilot_suggestion_hidden = true
+                end)
+
+                cmp.event:on("menu_closed", function()
+                  vim.b.copilot_suggestion_hidden = false
+                end)
+              end
+            end,
+          },
+        },
+        config = function()
+          require("copilot").setup {
+            suggestion = {
+              enabled = false,
+              auto_trigger = false,
+              keymap = {
+                accept_word = false,
+                accept_line = false,
+              },
+            },
+            panel = {
+              enabled = false,
+            },
+            filetypes = {
+              gitcommit = false,
+              TelescopePrompt = false,
+            },
+            server_opts_overrides = {
+              trace = "verbose",
+              settings = {
+                advanced = {
+                  listCount = 3,
+                  inlineSuggestCount = 3,
+                },
+              },
+            },
+          }
+        end,
+      },
+    },
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "cmp")
+      local format_kinds = opts.formatting.format
+      opts.formatting.format = function(entry, item)
+        if item.kind == "Color" then
+          item.kind = "⬤"
+          format_kinds(entry, item)
+          return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+        end
+        return format_kinds(entry, item)
+      end
+      local cmp = require "cmp"
+
+      cmp.setup(opts)
+
+      -- local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+      -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = opts.mapping,
+        sources = {
+          { name = "buffer" },
+        },
+      })
+    end,
+  },
   -- override plugin configs
   {
     "williamboman/mason.nvim",
@@ -144,7 +237,9 @@ local plugins = {
     run = "yarn install",
     ft = {
       "javascript",
+      "javascriptreact",
       "typescript",
+      "typescriptreact",
       "css",
       "html",
       "json",
@@ -158,9 +253,45 @@ local plugins = {
       "ruby",
       "php",
     },
-    enabled = false,
   },
-
+  -- {
+  --   "github/copilot.vim",
+  --   lazy = false,
+  --   config = function()
+  --     require "custom.configs.copilot"
+  --   end,
+  -- },
+  {
+    "jonahgoldwastaken/copilot-status.nvim",
+    event = "LspAttach",
+    config = function()
+      require("copilot_status").setup {
+        icons = {
+          idle = " ",
+          error = " ",
+          offline = " ",
+          warning = " ",
+          loading = " ",
+        },
+        debug = false,
+      }
+    end,
+  },
+  {
+    "toppair/peek.nvim",
+    event = { "VeryLazy" },
+    build = "deno task --quiet build:fast",
+    config = function()
+      require("peek").setup()
+      -- refer to `configuration to change defaults`
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
+  },
+  {
+    "f-person/git-blame.nvim",
+    cmd = "GitBlameToggle",
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

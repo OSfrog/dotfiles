@@ -40,6 +40,13 @@ M.general = {
 
     -- Substitute word under cursor
     ["<leader>*"] = { ":%s/\\<<C-r><C-w>\\>/", "substitute word under cursor" },
+
+    ["<leader>tt"] = {
+      function()
+        require("base46").toggle_transparency()
+      end,
+      "toggle transparency",
+    },
   },
   i = {
     -- jj to Escape
@@ -80,7 +87,7 @@ M.lspconfig = {
       end,
       "lsp hover",
     },
-    ["<Shift><C-j>"] = {
+    ["<C-k>"] = {
       function()
         vim.diagnostic.goto_prev()
       end,
@@ -113,6 +120,12 @@ M.telescope = {
 M.lspsaga = {
   n = {
     ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
+  },
+}
+
+M.git = {
+  n = {
+    ["<leader>gl"] = { "<CMD>GitBlameToggle<CR>", "  Blame line" },
   },
 }
 

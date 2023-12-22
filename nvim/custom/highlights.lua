@@ -18,6 +18,14 @@ M.override = {
     bg = "none",
     fg = "light_grey",
   },
+  Visual = {
+    bg = "light_grey",
+  },
+
+  Search = {
+    bg = "red",
+    fg = "lavender",
+  },
 }
 
 ---@type HLTable
