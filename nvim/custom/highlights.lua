@@ -23,8 +23,8 @@ M.override = {
   },
 
   Search = {
-    bg = "red",
-    fg = "lavender",
+    bg = "light_grey",
+    fg = "white",
   },
 }
 
