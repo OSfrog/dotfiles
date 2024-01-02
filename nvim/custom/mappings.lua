@@ -87,19 +87,19 @@ M.lspconfig = {
       end,
       "lsp hover",
     },
-    ["<C-k>"] = {
-      function()
-        vim.diagnostic.goto_prev()
-      end,
-      "goto prev",
-    },
-
-    ["<C-j>"] = {
-      function()
-        vim.diagnostic.goto_next()
-      end,
-      "goto_next",
-    },
+    -- ["<C-k>"] = {
+    --   function()
+    --     vim.diagnostic.goto_prev()
+    --   end,
+    --   "goto prev",
+    -- },
+    --
+    -- ["<C-j>"] = {
+    --   function()
+    --     vim.diagnostic.goto_next()
+    --   end,
+    --   "goto_next",
+    -- },
     ["gR"] = {
       function()
         require("nvchad.renamer").open()
@@ -119,6 +119,8 @@ M.telescope = {
 
 M.lspsaga = {
   n = {
+    ["<C-k>"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "goto prev" },
+    ["<C-j>"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "goto next" },
     ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "code action" },
   },
 }

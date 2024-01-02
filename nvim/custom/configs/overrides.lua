@@ -1,26 +1,8 @@
 local M = {}
 
 M.treesitter = {
-  ensure_installed = {
-    "vim",
-    "lua",
-    "html",
-    "css",
-    "javascript",
-    "typescript",
-    "tsx",
-    "c",
-    "markdown",
-    "markdown_inline",
-    "php",
-  },
-  autotag = { enable = true, enable_close_on_slash = false }, -- autotag issue, https://github.com/windwp/nvim-ts-autotag/issues/125
-  indent = {
-    enable = true,
-    -- disable = {
-    --   "python"
-    -- },
-  },
+  auto_install = true,
+  autotag = { enable = true, enable_close_on_slash = true }, -- autotag issue, https://github.com/windwp/nvim-ts-autotag/issues/125
 }
 
 M.mason = {
@@ -86,17 +68,6 @@ M.blankline = {
 
 M.cmp = {
   mapping = {
-    -- ["<CR>"] = require("cmp").mapping {
-    --   i = function(fallback)
-    --     if require("cmp").visible() and require("cmp").get_active_entry() then
-    --       require("cmp").confirm { behavior = require("cmp").ConfirmBehavior.Replace, select = false }
-    --     else
-    --       fallback()
-    --     end
-    --   end,
-    --   s = require("cmp").mapping.confirm { select = true },
-    --   c = require("cmp").mapping.confirm { behavior = require("cmp").ConfirmBehavior.Replace, select = true },
-    -- },
     ["<ESC>"] = require("cmp").mapping(function(fallback)
       if require("cmp").visible() then
         require("cmp").abort()

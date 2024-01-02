@@ -87,7 +87,6 @@ lspsaga.setup {
       quit = "q",
       go_action = "g",
     },
-    theme = {},
   },
   outline = {
     win_position = "right",
