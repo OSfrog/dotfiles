@@ -294,6 +294,11 @@ local plugins = {
     "f-person/git-blame.nvim",
     cmd = "GitBlameToggle",
   },
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    cmd = "LazyGit",
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

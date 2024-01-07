@@ -128,6 +128,7 @@ M.lspsaga = {
 M.git = {
   n = {
     ["<leader>gl"] = { "<CMD>GitBlameToggle<CR>", "  Blame line" },
+    ["<leader>gg"] = { "<CMD>LazyGit<CR>", "Git GUI" },
   },
 }
 
