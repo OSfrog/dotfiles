@@ -8,7 +8,7 @@ M.ui = {
   theme = "catppuccin",
   theme_toggle = { "gatekeeper", "gatekeeper" },
 
-  transparency = false,
+  transparency = true,
 
   hl_override = highlights.override,
   hl_add = highlights.add,
