@@ -66,27 +66,27 @@ M.blankline = {
   vim.api.nvim_set_hl(0, "IndentBlanklineContextStart", { nocombine = false, underline = false, special = "none" }),
 }
 
-M.cmp = {
-  mapping = {
-    ["<ESC>"] = require("cmp").mapping(function(fallback)
-      if require("cmp").visible() then
-        require("cmp").abort()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "nvim_lua" },
-    { name = "path" },
-    { name = "nvim_lsp_signature_help" },
-  },
-}
+-- M.cmp = {
+--   mapping = {
+--     ["<ESC>"] = require("cmp").mapping(function(fallback)
+--       if require("cmp").visible() then
+--         require("cmp").abort()
+--       else
+--         fallback()
+--       end
+--     end, {
+--       "i",
+--       "s",
+--     }),
+--   },
+--   sources = {
+--     { name = "nvim_lsp" },
+--     { name = "luasnip" },
+--     { name = "buffer" },
+--     { name = "nvim_lua" },
+--     { name = "path" },
+--     { name = "nvim_lsp_signature_help" },
+--   },
+-- }
 
 return M

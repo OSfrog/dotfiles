@@ -140,6 +140,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
+  { "roobert/tailwindcss-colorizer-cmp.nvim" },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -263,7 +264,8 @@ local plugins = {
   -- },
   {
     "jonahgoldwastaken/copilot-status.nvim",
-    event = "LspAttach",
+    event = "BufReadPost",
+    lazy = true,
     config = function()
       require("copilot_status").setup {
         icons = {

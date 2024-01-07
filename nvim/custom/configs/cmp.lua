@@ -43,8 +43,8 @@ local function limit_lsp_types(entry, ctx)
 
   if char_before_cursor == "." and char_after_dot:match "[a-zA-Z]" then
     return kind == types.lsp.CompletionItemKind.Method
-      or kind == types.lsp.CompletionItemKind.Field
-      or kind == types.lsp.CompletionItemKind.Property
+        or kind == types.lsp.CompletionItemKind.Field
+        or kind == types.lsp.CompletionItemKind.Property
   elseif string.match(line, "^%s+%w+$") then
     return kind == types.lsp.CompletionItemKind.Function or kind == types.lsp.CompletionItemKind.Variable
   elseif kind == require("cmp").lsp.CompletionItemKind.Text then
@@ -124,7 +124,7 @@ M.cmp = {
     },
   },
   completion = {
-    completeopt = "menu,menuone,noinsert,noselect",
+    completeopt = "menu,menuone,noinsert",
     autocomplete = { require("cmp.types").cmp.TriggerEvent.TextChanged },
     keyword_length = 2,
   },
@@ -138,11 +138,16 @@ M.cmp = {
     ["<Down>"] = require("cmp").mapping.select_next_item(),
     ["<Tab>"] = require("cmp").mapping(function(fallback)
       if require("copilot.suggestion").is_visible() then
+        if require("cmp").visible() then
+          require("cmp").close()
+        end
         require("copilot.suggestion").accept()
       elseif require("luasnip").expandable() then
         require("luasnip").expand()
       elseif require("luasnip").expand_or_jumpable() then
         require("luasnip").expand_or_jump()
+      elseif require("cmp").visible() then
+        require("cmp").select_next_item()
       elseif check_backspace() then
         fallback()
       else
@@ -152,17 +157,6 @@ M.cmp = {
       "i",
       "s",
     }),
-    ["<CR>"] = require("cmp").mapping {
-      i = function(fallback)
-        if require("cmp").visible() and require("cmp").get_active_entry() then
-          require("cmp").confirm { behavior = require("cmp").ConfirmBehavior.Replace, select = false }
-        else
-          fallback()
-        end
-      end,
-      s = require("cmp").mapping.confirm { select = true },
-      c = require("cmp").mapping.confirm { behavior = require("cmp").ConfirmBehavior.Replace, select = true },
-    },
     ["<ESC>"] = require("cmp").mapping(function(fallback)
       if require("cmp").visible() then
         require("cmp").abort()
@@ -189,20 +183,8 @@ M.cmp = {
   },
   sources = {
     {
-      name = "copilot",
-      max_item_count = 2,
-    },
-    {
-      name = "codeium",
-      max_item_count = 2,
-    },
-    {
-      name = "cmp_tabnine",
-      max_item_count = 2,
-    },
-    {
       name = "nvim_lsp",
-      keyword_length = 5,
+      keyword_length = 2,
       -- entry_filter = function(entry, ctx)
       --   return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
       -- end,
@@ -219,19 +201,9 @@ M.cmp = {
     },
     { name = "treesitter" },
     { name = "nvim_lsp_document_symbol" },
-    { name = "luasnip", max_item_count = 2 },
+    { name = "luasnip",                 max_item_count = 2 },
     { name = "nvim_lua" },
-    -- {
-    --   name = "buffer",
-    --   keyword_length = 5,
-    --   option = buffer_option,
-    -- },
-    { name = "npm", keyword_length = 4 },
-    -- {
-    --   name = "fuzzy_buffer",
-    --   keyword_length = 5,
-    --   option = buffer_option,
-    -- },
+    { name = "npm",                     keyword_length = 4 },
   },
   matching = {
     disallow_fuzzy_matching = true,
