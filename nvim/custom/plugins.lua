@@ -17,6 +17,10 @@ local plugins = {
         end,
       },
       {
+        "antosha417/nvim-lsp-file-operations",
+        config = true,
+      },
+      {
         "glepnir/lspsaga.nvim",
         config = function()
           require "custom.configs.lspsaga"
