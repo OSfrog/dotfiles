@@ -56,3 +56,19 @@ autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
 autocmd("FileChangedShellPost", {
   command = [[echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None]],
 })
+
+-- Highlight on yank
+vim.cmd [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=300 }
+  augroup END
+]]
+
+-- Set filetype for .env files
+vim.cmd [[
+  augroup dotenv
+    autocmd!
+    autocmd BufRead,BufNewFile *.env set filetype=dotenv
+  augroup END
+]]

@@ -1,43 +1,59 @@
-local overrides = require "custom.configs.overrides"
-local cmp_opt = require "custom.configs.cmp"
+local overrides = require "configs.overrides"
+local cmp_opt = require "configs.cmp"
 
----@type NvPluginSpec[]
-local plugins = {
-
-  -- Override plugin definition options
-
+return {
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre", -- uncomment for format on save
+    config = function()
+      require "configs.conform"
+    end,
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- format & linting
+      "williamboman/mason.nvim",
       {
-        "nvimtools/none-ls.nvim",
+        "williamboman/mason-lspconfig.nvim",
         config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-      {
-        "antosha417/nvim-lsp-file-operations",
-        config = true,
-      },
-      {
-        "glepnir/lspsaga.nvim",
-        config = function()
-          require "custom.configs.lspsaga"
+          require("mason").setup()
+          require("mason-lspconfig").setup {
+            ensure_installed = {
+              "lua_ls",
+              "html",
+              "cssls",
+              "tsserver",
+              "clangd",
+              "prismals",
+              "eslint",
+              "vale_ls",
+              "yamlls",
+            },
+          }
+          require("nvchad.configs.lspconfig").defaults()
+          require "configs.lspconfig"
         end,
       },
     },
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
   },
   {
     "glepnir/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-      require "custom.configs.lspsaga"
+      require "configs.lspsaga"
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+      },
+    },
   },
   {
     "hrsh7th/nvim-cmp",
@@ -139,13 +155,6 @@ local plugins = {
       })
     end,
   },
-  -- override plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
-  { "roobert/tailwindcss-colorizer-cmp.nvim" },
-
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
@@ -154,26 +163,23 @@ local plugins = {
     },
     opts = overrides.treesitter,
   },
-
   {
-    "numToStr/Comment.nvim",
-    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+    "jonahgoldwastaken/copilot-status.nvim",
+    event = "BufReadPost",
+    lazy = true,
     config = function()
-      require("Comment").setup {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      require("copilot_status").setup {
+        icons = {
+          idle = " ",
+          error = " ",
+          offline = " ",
+          warning = " ",
+          loading = " ",
+        },
+        debug = false,
       }
     end,
   },
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = overrides.blankline,
-  },
-
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -194,7 +200,7 @@ local plugins = {
     "karb94/neoscroll.nvim",
     event = "BufRead",
     config = function()
-      require "custom.configs.neoscroll"
+      require "configs.neoscroll"
     end,
   },
   {
@@ -203,39 +209,6 @@ local plugins = {
     config = function()
       require("nvim-ts-autotag").setup()
     end,
-  },
-  {
-    "folke/trouble.nvim",
-    cmd = "Trouble",
-    config = function()
-      require("trouble").setup()
-    end,
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        prompt_prefix = "   ",
-      },
-      extensions_list = { "themes", "terms", "fzf" },
-      extensions = {
-        fzf = {
-          fuzzy = true,
-          override_generic_sorter = true,
-          override_file_sorter = true,
-          case_mode = "smart_case",
-        },
-      },
-    },
-    dependencies = {
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-      },
-    },
-    -- config = function()
-    --   require("telescope").load_extension "fzf"
-    -- end,
   },
   {
     "prettier/vim-prettier",
@@ -259,30 +232,6 @@ local plugins = {
       "php",
     },
   },
-  -- {
-  --   "github/copilot.vim",
-  --   lazy = false,
-  --   config = function()
-  --     require "custom.configs.copilot"
-  --   end,
-  -- },
-  {
-    "jonahgoldwastaken/copilot-status.nvim",
-    event = "BufReadPost",
-    lazy = true,
-    config = function()
-      require("copilot_status").setup {
-        icons = {
-          idle = " ",
-          error = " ",
-          offline = " ",
-          warning = " ",
-          loading = " ",
-        },
-        debug = false,
-      }
-    end,
-  },
   {
     "toppair/peek.nvim",
     event = { "VeryLazy" },
@@ -303,11 +252,4 @@ local plugins = {
     dependencies = "nvim-lua/plenary.nvim",
     cmd = "LazyGit",
   },
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
 }
-
-return plugins
