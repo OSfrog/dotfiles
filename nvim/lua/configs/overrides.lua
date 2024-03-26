@@ -1,0 +1,32 @@
+local M = {}
+
+M.treesitter = {
+  auto_install = true,
+  autotag = { enable = true, enable_close_on_slash = true }, -- autotag issue, https://github.com/windwp/nvim-ts-autotag/issues/125
+}
+
+M.blankline = {
+  filetype_exclude = {
+    "help",
+    "terminal",
+    "alpha",
+    "packer",
+    "lspinfo",
+    "TelescopePrompt",
+    "TelescopeResults",
+    "nvchad_cheatsheet",
+    "lsp-installer",
+    "norg",
+    "Empty",
+  },
+  show_end_of_line = true,
+  show_foldtext = true,
+  show_trailing_blankline_indent = false,
+  show_first_indent_level = false,
+  show_current_context = true,
+  show_current_context_start = false,
+  vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { nocombine = true, fg = "none" }),
+  vim.api.nvim_set_hl(0, "IndentBlanklineContextStart", { nocombine = false, underline = false, special = "none" }),
+}
+
+return M
