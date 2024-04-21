@@ -1,0 +1,74 @@
+import = ["/Users/tommy/.config/alacritty/catppuccin/catppuccin-macchiato.toml"]
+
+[cursor.style]
+shape = "Block"
+
+[cursor.vi_mode_style]
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "SemiBold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u0016"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001Bi"
+key = "I"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bi[74;5u"
+key = "J"
+mods = "Control|Shift"
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/opt/homebrew/bin/fish"
+
+[window]
+decorations = "buttonless"
+opacity = 0.94
+option_as_alt = "Both"
+
+[window.padding]
+x = 0
+y = 0
