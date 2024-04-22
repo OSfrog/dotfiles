@@ -181,6 +181,10 @@ return {
     end,
   },
   {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
+  },
+  {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
   },
