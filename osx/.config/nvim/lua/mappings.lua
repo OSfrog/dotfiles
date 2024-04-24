@@ -70,7 +70,7 @@ map("n", "gh", function()
   vim.lsp.buf.hover()
 end, { desc = "lsp hover" })
 map("n", "gR", function()
-  require("nvchad.renamer").open()
+  require("nvchad.lsp.renamer").open()
 end, { desc = "lsp rename" })
 
 -- Telescope Mappings
