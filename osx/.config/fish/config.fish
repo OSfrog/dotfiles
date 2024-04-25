@@ -93,4 +93,3 @@ end
 starship init fish | source
 nvm use default # workaround for nvm bug
 clear
-neofetch

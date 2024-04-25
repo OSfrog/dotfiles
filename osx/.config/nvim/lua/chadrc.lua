@@ -1,4 +1,4 @@
--- This file  needs to have same structure as nvconfig.lua 
+-- This file  needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
 
 ---@type ChadrcConfig
@@ -9,18 +9,12 @@ local highlights = require "highlights"
 
 M.ui = {
   theme = "catppuccin",
-  theme_toggle = { "gatekeeper", "gatekeeper" },
+  theme_toggle = { "tokyonight", "gatekeeper" },
 
   transparency = true,
 
   hl_override = highlights.override,
   hl_add = highlights.add,
-
-  lsp = {
-    signature = {
-      disabled = true,
-    },
-  },
 
   statusline = {
     theme = "vscode_colored", -- default/vscode/vscode_colored/minimal

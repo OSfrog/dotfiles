@@ -38,6 +38,10 @@ return {
   },
   {
     "glepnir/lspsaga.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter", -- optional
+      "nvim-tree/nvim-web-devicons", -- optional
+    },
     event = "LspAttach",
     config = function()
       require "configs.lspsaga"
@@ -61,6 +65,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-copilot",
       "hrsh7th/cmp-nvim-lsp-signature-help",
+      "roobert/tailwindcss-colorizer-cmp.nvim",
       {
         "zbirenbaum/copilot.lua",
         event = "InsertEnter",
