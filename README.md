@@ -1,13 +1,14 @@
 # Tommys dotfiles
 
-- Neovim config -[vim-plug](https://github.com/junegunn/vim-plug) for managing plugins
-  - `:PlugInstall` to install plugins
+- Neovim config 
+- [lazy.nvim](https://github.com/folke/lazy.nvim) for managing plugins
+  - `:Lazy` to install plugins
 - fish config
 - PowerShell config
 
-Neovim (0.6) is required for this config
+Neovim (0.9) is required for this config
 
-- [vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager
+- [lazy.nvim](https://github.com/folke/lazy.nvim) - A lazy loading Vim plugin manager
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - [Treesitter](https://github.com/tree-sitter/tree-sitter) configurations and abstraction layer for Neovim
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion plugin for neovim coded in Lua
@@ -16,11 +17,10 @@ Neovim (0.6) is required for this config
 - [nvim-tree](https://github.com/Shougo/defx.nvim) - A file explorer
 
 ## Shell setup (macOS & Linux)
-
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-- [Tide](https://github.com/IlanCosman/tide) - Shell theme. Use version 5: `fisher install ilancosman/tide@v5`
-- [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use Hack.
+- [Starship](https://starship.rs/) - Sexy shell prompt. 
+- [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use JetBrainsMono Nerd Font.
 - [z for fish](https://github.com/jethrokuan/z) - Directory jumping
 - [Exa](https://the.exa.website/) - `ls` replacement
 
