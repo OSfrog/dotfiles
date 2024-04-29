@@ -26,6 +26,12 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
 
+# Stretch window to the left
+shift + ctrl + alt - h : yabai -m window --resize right:-20:0
+
+# Stretch window to the right
+shift + ctrl + alt - l : yabai -m window --resize right:20:0
+
 # swap windows
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
