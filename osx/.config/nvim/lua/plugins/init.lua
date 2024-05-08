@@ -163,7 +163,17 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      { "JoosepAlviste/nvim-ts-context-commentstring", ft = "javascriptreact" },
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        init = function()
+          vim.g.skip_ts_context_commentstring_module = true
+        end,
+        config = function()
+          require("ts_context_commentstring").setup {
+            enable_autocmd = false,
+          }
+        end,
+      },
       "windwp/nvim-ts-autotag",
     },
     opts = overrides.treesitter,
@@ -182,6 +192,14 @@ return {
           loading = " ",
         },
         debug = false,
+      }
+    end,
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
       }
     end,
   },
