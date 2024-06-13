@@ -64,4 +64,4 @@ shift + alt - 7 : yabai -m window --space 7;
 # stop/start/restart yabai
 ctrl + alt - s : yabai --start-service
 ctrl + alt - q : yabai --stop-service
-ctrl + alt - r : brew services restart yabai
+ctrl + alt - r : yabai --restart-service
