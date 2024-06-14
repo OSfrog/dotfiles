@@ -5,10 +5,11 @@ return {
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
-    config = function()
-      require "configs.conform"
+    opts = function()
+      return require "configs.conform"
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -66,73 +67,6 @@ return {
       "hrsh7th/cmp-copilot",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "roobert/tailwindcss-colorizer-cmp.nvim",
-      {
-        "zbirenbaum/copilot.lua",
-        event = "InsertEnter",
-        dependencies = {
-          {
-            "zbirenbaum/copilot-cmp",
-            config = function()
-              require("copilot").setup {
-                panel = {
-                  enabled = true,
-                  auto_refresh = true,
-                },
-                suggestion = {
-                  enabled = true,
-                  auto_trigger = true,
-                  accept = false, -- disable built-in keymapping
-                },
-                filetypes = {
-                  markdown = true,
-                  yaml = true,
-                },
-              }
-
-              -- hide copilot suggestions when cmp menu is open
-              -- to prevent odd behavior/garbled up suggestions
-              local cmp_status_ok, cmp = pcall(require, "cmp")
-              if cmp_status_ok then
-                cmp.event:on("menu_opened", function()
-                  vim.b.copilot_suggestion_hidden = true
-                end)
-
-                cmp.event:on("menu_closed", function()
-                  vim.b.copilot_suggestion_hidden = false
-                end)
-              end
-            end,
-          },
-        },
-        config = function()
-          require("copilot").setup {
-            suggestion = {
-              enabled = false,
-              auto_trigger = false,
-              keymap = {
-                accept_word = false,
-                accept_line = false,
-              },
-            },
-            panel = {
-              enabled = false,
-            },
-            filetypes = {
-              gitcommit = false,
-              TelescopePrompt = false,
-            },
-            server_opts_overrides = {
-              trace = "verbose",
-              settings = {
-                advanced = {
-                  listCount = 3,
-                  inlineSuggestCount = 3,
-                },
-              },
-            },
-          }
-        end,
-      },
     },
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "cmp")
@@ -161,42 +95,65 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        init = function()
-          vim.g.skip_ts_context_commentstring_module = true
-        end,
-        config = function()
-          require("ts_context_commentstring").setup {
-            enable_autocmd = false,
-          }
-        end,
-      },
-      "windwp/nvim-ts-autotag",
-    },
-    opts = overrides.treesitter,
-  },
-  {
-    "jonahgoldwastaken/copilot-status.nvim",
-    event = "BufReadPost",
-    lazy = true,
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
     config = function()
-      require("copilot_status").setup {
-        icons = {
-          idle = " ",
-          error = " ",
-          offline = " ",
-          warning = " ",
-          loading = " ",
+      require("copilot").setup {
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept_word = false,
+            accept_line = false,
+          },
         },
-        debug = false,
+        filetypes = {
+          gitcommit = false,
+          TelescopePrompt = false,
+        },
+        server_opts_overrides = {
+          trace = "verbose",
+          settings = {
+            advanced = {
+              listCount = 3,
+              inlineSuggestCount = 3,
+            },
+          },
+        },
       }
     end,
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      {
+        "windwp/nvim-ts-autotag",
+        config = function()
+          require("nvim-ts-autotag").setup()
+        end,
+      },
+    },
+    opts = {
+      ensure_installed = {
+        "vim",
+        "html",
+        "css",
+        "javascript",
+        "json",
+        "toml",
+        "markdown",
+        "bash",
+        "lua",
+        "tsx",
+        "typescript",
+      },
+      autotag = { enable = true },
+    },
+  },
+  {
     "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
     config = function()
       require("Comment").setup {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
@@ -228,13 +185,6 @@ return {
     event = "BufRead",
     config = function()
       require "configs.neoscroll"
-    end,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
-    config = function()
-      require("nvim-ts-autotag").setup()
     end,
   },
   {

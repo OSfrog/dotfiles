@@ -1,10 +1,5 @@
 local M = {}
 
-M.treesitter = {
-  auto_install = true,
-  autotag = { enable = true, enable_close_on_slash = true }, -- autotag issue, https://github.com/windwp/nvim-ts-autotag/issues/125
-}
-
 M.blankline = {
   filetype_exclude = {
     "help",
