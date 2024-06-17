@@ -42,6 +42,25 @@ map("n", "<leader>tt", function()
   require("base46").toggle_transparency()
 end, { desc = "toggle transparency" })
 
+-- Copilot Chat
+map("n", "<leader>cc", function()
+  require("CopilotChat").toggle {}
+end, { desc = "toggle copilot chat" })
+
+--CopilotChat - Quick chat with current buffer
+map("n", "<leader>ccq", function()
+  local input = vim.fn.input "Quick Chat: "
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end, { desc = "CopilotChat - Quick chat" })
+
+-- CopilotChat - Prompt actions
+map("v", "<leader>cc", function()
+  local actions = require "CopilotChat.actions"
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end, { desc = "CopilotChat - Prompt actions" })
+
 -- General Insert Mode Mappings
 map("i", "jj", "<ESC>", { desc = "escape insert mode" })
 
