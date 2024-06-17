@@ -64,7 +64,6 @@ return {
     "hrsh7th/nvim-cmp",
     opts = cmp_opt.cmp,
     dependencies = {
-      "hrsh7th/cmp-copilot",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "roobert/tailwindcss-colorizer-cmp.nvim",
     },
@@ -122,6 +121,21 @@ return {
         },
       }
     end,
+  },
+  {
+    {
+      "CopilotC-Nvim/CopilotChat.nvim",
+      branch = "canary",
+      event = "VeryLazy",
+      dependencies = {
+        { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+      },
+      opts = {
+        debug = true, -- Enable debugging
+        -- See Configuration section for rest
+      },
+      -- See Commands section for default commands if you want to lazy load on them
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",
