@@ -2,3 +2,6 @@
 **/.DS_Store
 **/*_bak/
 **/sanity/
+/osx/.config/fish/*
+!/osx/.config/fish/config.fish
+!/osx/.config/fish/themes/
