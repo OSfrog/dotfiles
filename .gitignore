@@ -5,3 +5,4 @@
 /osx/.config/fish/*
 !/osx/.config/fish/config.fish
 !/osx/.config/fish/themes/
+!/osx/.config/fish/fish_plugins
