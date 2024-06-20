@@ -55,8 +55,16 @@ map("n", "<leader>ccq", function()
   end
 end, { desc = "CopilotChat - Quick chat" })
 
--- CopilotChat - Prompt actions
+--CopilotChat - Quick chat with visual selection
 map("v", "<leader>cc", function()
+  local input = vim.fn.input "Quick Chat: "
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+  end
+end, { desc = "CopilotChat - Quick chat - Visual" })
+
+-- CopilotChat - Prompt actions
+map("v", "<leader>cq", function()
   local actions = require "CopilotChat.actions"
   require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
 end, { desc = "CopilotChat - Prompt actions" })

@@ -139,14 +139,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      {
-        "windwp/nvim-ts-autotag",
-        config = function()
-          require("nvim-ts-autotag").setup()
-        end,
-      },
-    },
     opts = {
       ensure_installed = {
         "vim",
@@ -161,8 +153,14 @@ return {
         "tsx",
         "typescript",
       },
-      autotag = { enable = true },
     },
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    event = "BufReadPre",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
   {
     "numToStr/Comment.nvim",
