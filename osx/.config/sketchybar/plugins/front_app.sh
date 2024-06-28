@@ -48,6 +48,9 @@ case $INFO in
 "Microsoft Teams")
   ICON=󰊻
   ;;
+"Microsoft Outlook")
+  ICON=󰇰
+  ;;
 "Notion")
 	ICON_PADDING_RIGHT=6
 	ICON=󰈄
