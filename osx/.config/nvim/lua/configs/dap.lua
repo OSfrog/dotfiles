@@ -13,6 +13,8 @@ if not has_dap_virtual_text then
   return
 end
 
+require("dap.ext.vscode").load_launchjs "launch.json"
+
 dap.adapters["pwa-node"] = {
   type = "server",
   host = "localhost",
@@ -31,6 +33,7 @@ for _, lang in ipairs { "javascript", "javascriptreact", "typescript", "typescri
       name = "Launch file",
       program = "${file}",
       cwd = "${workspaceFolder}",
+      runtimeExecutable = "ts-node",
     },
     {
       type = "pwa-node",

@@ -124,3 +124,6 @@ map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Git GUI" })
 -- Debugging Mappings
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "toggle breakpoint" })
 map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "continue" })
+map("n", "<leader>dn", "<cmd>lua require'dap'.step_over()<CR>", { desc = "step over" })
+map("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", { desc = "step into" })
+map("n", "<leader>do", "<cmd>lua require'dap'.step_out()<CR>", { desc = "step out" })

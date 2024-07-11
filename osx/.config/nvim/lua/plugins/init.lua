@@ -178,10 +178,16 @@ return {
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
+      "mxsdev/nvim-dap-vscode-js",
     },
     config = function()
       require "configs.dap"
     end,
+  },
+  {
+    "microsoft/vscode-js-debug",
+    build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+    event = "VeryLazy",
   },
   {
     "nvim-tree/nvim-tree.lua",
