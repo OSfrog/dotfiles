@@ -17,7 +17,7 @@ return {
       {
         "williamboman/mason-lspconfig.nvim",
         config = function()
-          require("mason").setup()
+          require("mason").setup {}
           require("mason-lspconfig").setup {
             ensure_installed = {
               "lua_ls",
@@ -170,6 +170,17 @@ return {
       require("Comment").setup {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
       }
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+    },
+    config = function()
+      require "configs.dap"
     end,
   },
   {

@@ -120,3 +120,7 @@ map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "code action" })
 -- Git Mappings
 map("n", "<leader>gl", "<CMD>GitBlameToggle<CR>", { desc = "Blame line" })
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Git GUI" })
+
+-- Debugging Mappings
+map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "toggle breakpoint" })
+map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "continue" })
