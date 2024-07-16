@@ -185,11 +185,6 @@ return {
     end,
   },
   {
-    "microsoft/vscode-js-debug",
-    build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-    event = "VeryLazy",
-  },
-  {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
