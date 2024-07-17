@@ -1,7 +1,4 @@
 local autocmd = vim.api.nvim_create_autocmd
-local cmd = vim.api.nvim_command
-local augroup = vim.api.nvim_create_augroup
-local fn = vim.fn
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {

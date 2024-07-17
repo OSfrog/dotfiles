@@ -1,20 +1,19 @@
 local M = {}
--- local copilot_cmp_comparators = pcall(require, "copilot_cmp.comparators")
 local list_contains = vim.list_contains or vim.tbl_contains
 pcall(function()
   dofile(vim.g.base46_cache .. "cmp")
 end)
 
--- local function deprioritize_snippet(entry1, entry2)
---   local types = require "cmp.types"
---
---   if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
---     return false
---   end
---   if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
---     return true
---   end
--- end
+local function deprioritize_snippet(entry1, entry2)
+  local types = require "cmp.types"
+
+  if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+    return false
+  end
+  if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
+    return true
+  end
+end
 
 local function under(entry1, entry2)
   local _, entry1_under = entry1.completion_item.label:find "^_+"
@@ -161,19 +160,17 @@ M.cmp = {
   sorting = {
     priority_weight = 2,
     -- comparators = {
-    --   -- Definitions of compare function https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/compare.lua
-    --   copilot_cmp_comparators.prioritize or function() end,
-    --   deprioritize_snippet,
-    --   require("cmp").config.compare.exact,
-    --   require("cmp").config.compare.locality,
-    --   require("cmp").config.compare.recently_used,
-    --   under,
-    --   require("cmp").config.compare.score,
-    --   require("cmp").config.compare.kind,
-    --   require("cmp").config.compare.length,
-    --   require("cmp").config.compare.order,
-    --   require("cmp").config.compare.sort_text,
-    -- },
+    -- Definitions of compare function https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/compare.lua
+    deprioritize_snippet,
+    require("cmp").config.compare.exact,
+    require("cmp").config.compare.locality,
+    require("cmp").config.compare.recently_used,
+    under,
+    require("cmp").config.compare.score,
+    require("cmp").config.compare.kind,
+    require("cmp").config.compare.length,
+    require("cmp").config.compare.order,
+    require("cmp").config.compare.sort_text,
   },
 }
 
