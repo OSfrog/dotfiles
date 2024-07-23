@@ -89,7 +89,7 @@ map("v", "y", "ygv<esc>", { desc = "better yank" })
 
 -- Tabufline Mappings
 map("n", "<leader>X", function()
-  require("nvchad.tabufline").closeOtherBufs()
+  require("nvchad.tabufline").closeAllBufs()
 end, { desc = "Close all buffers except current" })
 
 -- LSPConfig Mappings
