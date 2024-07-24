@@ -4,8 +4,6 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("i", "jk", "<ESC>")
-
 -- General Normal Mode Mappings
 map("n", "<leader>o", "]<space>o", { remap = true, desc = "insert 2 newlines down into insert mode" })
 map("n", "<leader>O", "[<space>O", { remap = true, desc = "insert 2 newlines up into insert mode" })
