@@ -29,6 +29,13 @@ local function on_attach(client, bufnr)
   vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { buffer = bufnr, desc = "Lspsaga Code Action" })
 end
 
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or border
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
