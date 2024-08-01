@@ -3,7 +3,8 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "lua_ls", "tsserver", "clangd", "vale_ls", "yamlls", "tailwindcss", "eslint" }
+local servers =
+  { "html", "cssls", "lua_ls", "tsserver", "clangd", "vale_ls", "yamlls", "tailwindcss", "eslint", "rust_analyzer" }
 
 -- Specify how the border looks like
 local border = {
