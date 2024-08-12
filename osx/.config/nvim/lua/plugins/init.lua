@@ -156,6 +156,16 @@ return {
     },
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+    dependencies = {
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
+    },
+  },
+  {
     "windwp/nvim-ts-autotag",
     event = "BufReadPre",
     config = function()

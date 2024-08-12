@@ -41,4 +41,19 @@ M.nvimtree = {
   actions = { open_file = { quit_on_open = true } },
 }
 
+M.telescope = {
+  extensions_list = {
+    "themes",
+    "terms",
+    "fzf",
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+    },
+  },
+}
+
 return M
