@@ -13,6 +13,8 @@ M.ui = {
 
   transparency = true,
 
+  telescope = { style = "bordered" },
+
   hl_override = highlights.override,
   hl_add = highlights.add,
 
@@ -57,6 +59,15 @@ M.ui = {
       { "  Themes", "Spc t h", "Telescope themes" },
       { "  Mappings", "Spc c h", "NvCheatsheet" },
     },
+  },
+}
+
+M.term = {
+  float = {
+    width = 0.9,
+    height = 0.9,
+    row = 0.05,
+    col = 0.05,
   },
 }
 
