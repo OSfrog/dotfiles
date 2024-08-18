@@ -103,12 +103,9 @@ map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "live grep" })
 map("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", { desc = "find oldfiles" })
 map("n", "<leader>fa", function()
   require("telescope.builtin").find_files {
-    follow = true,
-    no_ignore = true,
-    hidden = true,
-    file_ignore_patterns = { "node_modules", ".git" },
+    file_ignore_patterns = {},
   }
-end, { noremap = true, silent = true, desc = "find all files excluding node_modules" })
+end, { noremap = true, silent = true, desc = "find all files" })
 
 -- Lspsaga Mappings
 map("n", "<C-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "goto prev" })

@@ -42,6 +42,14 @@ M.nvimtree = {
 }
 
 M.telescope = {
+  pickers = {
+    find_files = {
+      follow = true,
+      no_ignore = true,
+      hidden = true,
+      file_ignore_patterns = { "node_modules", ".git" },
+    },
+  },
   extensions_list = {
     "themes",
     "terms",
