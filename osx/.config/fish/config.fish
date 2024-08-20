@@ -57,26 +57,26 @@ set -g theme_hostname always
 # aliases
 alias ls "ls -p -G"
 alias la "ls -A"
-alias ll "exa -l -g --icons"
+alias ll "eza -l -g --icons"
 alias lla "ll -A"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-switch (uname)
-    case Darwin
-        source (dirname (status --current-filename))/config-osx.fish
-    case Linux
-        # Do nothing
-    case '*'
-        source (dirname (status --current-filename))/config-windows.fish
-end
-
-set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
-if test -f $LOCAL_CONFIG
-    source $LOCAL_CONFIG
-end
+# switch (uname)
+#     case Darwin
+#         source (dirname (status --current-filename))/config-osx.fish
+#     case Linux
+#         # Do nothing
+#     case '*'
+#         source (dirname (status --current-filename))/config-windows.fish
+# end
+#
+# set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
+# if test -f $LOCAL_CONFIG
+#     source $LOCAL_CONFIG
+# end
 
 function dotfiles
     if test (count $argv) -eq 2
@@ -93,3 +93,10 @@ end
 starship init fish | source
 nvm use default # workaround for nvm bug
 clear
+
+# pnpm
+set -gx PNPM_HOME "/Users/tommy/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
