@@ -4,6 +4,22 @@
 ---@type ChadrcConfig
 local M = {}
 
+local function get_centered_float_opts()
+  local width = vim.o.columns
+  local height = vim.o.lines
+  local float_width = math.floor(width * 0.9)
+  local float_height = math.floor(height * 0.9)
+  local row = math.floor((height - float_height) / 2)
+  local col = math.floor((width - float_width) / 2)
+
+  return {
+    width = float_width,
+    height = float_height,
+    row = row,
+    col = col,
+  }
+end
+
 -- Path to overriding theme and highlights files
 local highlights = require "highlights"
 
@@ -11,7 +27,7 @@ M.ui = {
   theme = "catppuccin",
   theme_toggle = { "tokyonight", "gatekeeper" },
 
-  transparency = true,
+  transparency = false,
 
   telescope = { style = "bordered" },
 
@@ -66,7 +82,7 @@ M.term = {
   float = {
     width = 0.9,
     height = 0.9,
-    row = 0.05,
+    row = 0.015,
     col = 0.05,
   },
 }
