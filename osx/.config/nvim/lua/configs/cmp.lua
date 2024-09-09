@@ -53,7 +53,10 @@ local disabled_buftypes = {
   "prompt",
 }
 
+local cmp = require "cmp"
+
 M.cmp = {
+
   enabled = function()
     local disabled = false
     disabled = disabled or (list_contains(disabled_buftypes, vim.api.nvim_get_option_value("buftype", { buf = 0 })))
@@ -70,11 +73,8 @@ M.cmp = {
     return true
   end,
   window = {
-    completion = {
-      scrolloff = 0,
-      col_offset = 0,
-      scrollbar = false,
-    },
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   completion = {
     completeopt = "menu,menuone,noinsert",
@@ -121,7 +121,7 @@ M.cmp = {
     debounce = 30,
     throttle = 20,
     async_budget = 0.8,
-    max_view_entries = 10,
+    -- max_view_entries = 10,
     fetching_timeout = 250,
   },
   snippet = {
