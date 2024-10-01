@@ -15,6 +15,7 @@ local servers = {
   "eslint",
   "rust_analyzer",
   "glsl_analyzer",
+  "omnisharp",
 }
 
 -- Specify how the border looks like

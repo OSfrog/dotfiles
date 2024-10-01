@@ -263,4 +263,23 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     cmd = "LazyGit",
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = "BufEnter",
+    config = true,
+  },
+  {
+    "nvchad/ui",
+    config = function()
+      require "nvchad"
+    end,
+  },
+
+  {
+    "nvchad/base46",
+    lazy = true,
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
 }

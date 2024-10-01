@@ -85,9 +85,11 @@ map(
 )
 map("v", "y", "ygv<esc>", { desc = "better yank" })
 
+map("v", "p", '"_dP', { desc = "paste without yanking" })
+
 -- Tabufline Mappings
 map("n", "<leader>X", function()
-  require("nvchad.tabufline").closeAllBufs()
+  require("nvchad.tabufline").closeAllBufs(false)
 end, { desc = "Close all buffers except current" })
 
 -- LSPConfig Mappings

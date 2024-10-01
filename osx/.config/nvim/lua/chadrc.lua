@@ -7,72 +7,101 @@ local M = {}
 -- Path to overriding theme and highlights files
 local highlights = require "highlights"
 
-M.ui = {
+local function line_percentage()
+  local current_line = vim.fn.line "."
+  local total_lines = vim.fn.line "$"
+  local percentage = math.floor((current_line / total_lines) * 100)
+  return tostring(percentage) .. "%%"
+end
+
+M.base46 = {
   theme = "catppuccin",
-  theme_toggle = { "tokyonight", "gatekeeper" },
+  theme_toggle = { "tokyonight", "chadracula" },
+  transparency = true,
+}
 
-  transparency = false,
-
+M.ui = {
   telescope = { style = "bordered" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
-
   statusline = {
     theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "block",
+    modules = { line_percentage },
   },
 
-  nvdash = {
-    load_on_startup = true,
-    header = {
-      "                ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆                        ",
-      "                 ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦                      ",
-      "                       ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷⠄⠄⠄⠄⠻⠿⢿⣿⣧⣄                    ",
-      "                        ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄                   ",
-      "                       ⢠⣿⣿⣿⠈  ⠡⠌⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀                  ",
-      "                ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘⠄ ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄                 ",
-      "               ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄                  ",
-      "              ⣠⣿⠿⠛⠄⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄                 ",
-      "              ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄                ",
-      "                   ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆                    ",
-      "                    ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃                    ",
-      "                                                               ",
+  cmp = {
+    format_colors = {
+      tailwind = true,
+    },
+  },
+}
 
-      -- "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗",
-      -- "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║",
-      -- "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║",
-      -- "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║",
-      -- "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║",
-      -- "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝",
-      "                                                  ",
-      "                 [ @yungleeee ]                   ",
+M.nvdash = {
+  load_on_startup = true,
+  header = {
+    "                ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆                        ",
+    "                 ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦                      ",
+    "                       ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷⠄⠄⠄⠄⠻⠿⢿⣿⣧⣄                    ",
+    "                        ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄                   ",
+    "                       ⢠⣿⣿⣿⠈  ⠡⠌⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀                  ",
+    "                ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘⠄ ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄                 ",
+    "               ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄                  ",
+    "              ⣠⣿⠿⠛⠄⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄                 ",
+    "              ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄                ",
+    "                   ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆                    ",
+    "                    ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃                    ",
+    "                                                               ",
+
+    -- "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗",
+    -- "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║",
+    -- "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║",
+    -- "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+    -- "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║",
+    -- "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝",
+    "                                                  ",
+    "                 [ @yungleeee ]                   ",
+  },
+
+  buttons = {
+    { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
+    { txt = "  Recent Files", keys = "Spc f h", cmd = "Telescope oldfiles" },
+    { txt = "  Find Word", keys = "Spc f g", cmd = "Telescope live_grep" },
+    { txt = "  Bookmarks", keys = "Spc b m", cmd = "Telescope marks" },
+    { txt = "  Themes", keys = "Spc t h", cmd = "Telescope themes" },
+    { txt = "  Mappings", keys = "Spc c h", cmd = "NvCheatsheet" },
+
+    { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
+
+    {
+      txt = function()
+        local stats = require("lazy").stats()
+        local ms = math.floor(stats.startuptime) .. " ms"
+        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+      end,
+      hl = "NvDashLazy",
+      no_gap = true,
     },
 
-    buttons = {
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "  Recent Files", "Spc f h", "Telescope oldfiles" },
-      { "  Find Word", "Spc f g", "Telescope live_grep" },
-      { "  Bookmarks", "Spc b m", "Telescope marks" },
-      { "  Themes", "Spc t h", "Telescope themes" },
-      { "  Mappings", "Spc c h", "NvCheatsheet" },
-    },
+    { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
   },
 }
 
 M.term = {
   float = {
+    relative = "editor",
     width = 0.9,
     height = 0.9,
     row = 0.015,
     col = 0.05,
+    border = "single",
   },
 }
 
 M.plugins = "plugins"
-
 -- check core.mappings for table structure
 M.mappings = require "mappings"
 
