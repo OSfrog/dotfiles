@@ -18,13 +18,13 @@ M.base46 = {
   theme = "catppuccin",
   theme_toggle = { "tokyonight", "chadracula" },
   transparency = true,
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
 M.ui = {
   telescope = { style = "bordered" },
 
-  hl_override = highlights.override,
-  hl_add = highlights.add,
   statusline = {
     theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
@@ -101,8 +101,8 @@ M.term = {
   },
 }
 
-M.plugins = "plugins"
--- check core.mappings for table structure
-M.mappings = require "mappings"
+M.lsp = {
+  signature = true,
+}
 
 return M

@@ -1,5 +1,4 @@
 local overrides = require "configs.overrides"
-local cmp_opt = require "configs.cmp"
 
 return {
   {
@@ -62,35 +61,15 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = cmp_opt.cmp,
+    event = "InsertEnter",
     dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      "roobert/tailwindcss-colorizer-cmp.nvim",
     },
-    config = function(_, opts)
-      dofile(vim.g.base46_cache .. "cmp")
-      local format_kinds = opts.formatting.format
-      opts.formatting.format = function(entry, item)
-        if item.kind == "Color" then
-          item.kind = "⬤"
-          format_kinds(entry, item)
-          return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-        end
-        return format_kinds(entry, item)
-      end
-      local cmp = require "cmp"
-
-      cmp.setup(opts)
-
-      -- local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-      -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
-      cmp.setup.cmdline({ "/", "?" }, {
-        mapping = opts.mapping,
-        sources = {
-          { name = "buffer" },
-        },
-      })
+    config = function()
+      require "configs.cmp"
     end,
   },
   {
@@ -281,5 +260,9 @@ return {
     build = function()
       require("base46").load_all_highlights()
     end,
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    ft = "markdown",
   },
 }
