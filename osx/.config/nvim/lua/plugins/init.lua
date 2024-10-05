@@ -261,8 +261,4 @@ return {
       require("base46").load_all_highlights()
     end,
   },
-  {
-    "OXY2DEV/markview.nvim",
-    ft = "markdown",
-  },
 }
