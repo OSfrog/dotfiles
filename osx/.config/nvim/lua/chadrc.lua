@@ -11,12 +11,12 @@ local function line_percentage()
   local current_line = vim.fn.line "."
   local total_lines = vim.fn.line "$"
   local percentage = math.floor((current_line / total_lines) * 100)
-  return tostring(percentage) .. "%%"
+  return tostring(percentage) .. "%% "
 end
 
 M.base46 = {
   theme = "catppuccin",
-  theme_toggle = { "tokyonight", "chadracula" },
+  theme_toggle = { "catppuccin", "chadracula" },
   transparency = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -29,8 +29,13 @@ M.ui = {
     theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
+    order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "line_percentage", "cwd" },
     separator_style = "block",
-    modules = { line_percentage },
+    modules = {
+      line_percentage = function()
+        return "%#LinePercentage#" .. line_percentage()
+      end,
+    },
   },
 
   cmp = {

@@ -75,7 +75,6 @@ local options = {
     { name = "buffer" },
     { name = "treesitter" },
     { name = "nvim_lsp_document_symbol" },
-    { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = "npm", keyword_length = 4 },
     { name = "path" },
