@@ -53,7 +53,7 @@ case $INFO in
   ;;
 "Notion")
 	ICON_PADDING_RIGHT=6
-	ICON=󰈄
+	ICON=
 	;;
 "Preview")
 	ICON_PADDING_RIGHT=3

@@ -104,7 +104,6 @@ return {
   {
     {
       "CopilotC-Nvim/CopilotChat.nvim",
-      branch = "canary",
       event = "VeryLazy",
       dependencies = {
         { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -199,28 +198,6 @@ return {
     config = function()
       require "configs.neoscroll"
     end,
-  },
-  {
-    "prettier/vim-prettier",
-    run = "yarn install",
-    ft = {
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "css",
-      "html",
-      "json",
-      "markdown",
-      "vue",
-      "yaml",
-      "scss",
-      "graphql",
-      "python",
-      "lua",
-      "ruby",
-      "php",
-    },
   },
   {
     "toppair/peek.nvim",
