@@ -8,6 +8,10 @@ local M = {}
 M.override = {
   Comment = {
     italic = true,
+    fg = { "grey", 15 },
+  },
+  ["@comment"] = {
+    fg = { "grey", 15 },
   },
   NvDashAscii = {
     bg = "none",
