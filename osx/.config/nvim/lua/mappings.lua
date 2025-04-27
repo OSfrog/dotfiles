@@ -94,7 +94,9 @@ end, { desc = "Close all buffers except current" })
 
 -- LSPConfig Mappings
 map("n", "gh", function()
-  vim.lsp.buf.hover()
+  vim.lsp.buf.hover {
+    border = "single",
+  }
 end, { desc = "lsp hover" })
 map("n", "gR", function()
   require "nvchad.lsp.renamer"()
