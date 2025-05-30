@@ -45,6 +45,25 @@ map("n", "<leader>cc", function()
   require("CopilotChat").toggle {}
 end, { desc = "toggle copilot chat" })
 
+map("n", "<leader>ccn", function()
+  local before = vim.tbl_map(function(buf)
+    return buf
+  end, vim.api.nvim_list_bufs())
+  require("CopilotChat").open {
+    window = {
+      layout = "replace",
+    },
+  }
+  vim.defer_fn(function()
+    local after = vim.api.nvim_list_bufs()
+    for _, buf in ipairs(after) do
+      if not vim.tbl_contains(before, buf) then
+        vim.bo[buf].buflisted = true
+      end
+    end
+  end, 50)
+end, { desc = "CopilotChat - New chat in a buffer" })
+
 --CopilotChat - Quick chat with current buffer
 map("n", "<leader>ccq", function()
   local input = vim.fn.input "Quick Chat: "
@@ -101,6 +120,9 @@ end, { desc = "lsp hover" })
 map("n", "gR", function()
   require "nvchad.lsp.renamer"()
 end, { desc = "lsp rename" })
+map("i", "<C-h>", function()
+  require("blink.cmp").show { providers = { "lsp" } }
+end, { desc = "Trigger completion menu" })
 
 -- Telescope Mappings
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "live grep" })
@@ -117,7 +139,14 @@ map("n", "<C-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "goto next" 
 map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "code action" })
 
 -- Git Mappings
-map("n", "<leader>gl", "<CMD>GitBlameToggle<CR>", { desc = "Blame line" })
+map("n", "<leader>gl", function()
+  local gitblame = require "gitblame"
+  if gitblame.is_blame_text_available() then
+    gitblame.disable()
+  else
+    gitblame.enable()
+  end
+end, { desc = "Toggle blame line" })
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Git GUI" })
 
 -- Debugging Mappings
