@@ -59,18 +59,10 @@ return {
       },
     },
   },
+  { import = "nvchad.blink.lazyspec" },
   {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-    },
-    config = function(opts)
-      require "configs.cmp"
-      opts.formatting = require("nvchad.cmp").formatting
-    end,
+    "saghen/blink.cmp",
+    opts = require "configs.blink",
   },
   {
     "zbirenbaum/copilot.lua",
@@ -82,7 +74,7 @@ return {
           auto_trigger = true,
           keymap = {
             accept_word = false,
-            accept_line = false,
+            accept_line = "<Tab>",
           },
         },
         filetypes = {
@@ -212,12 +204,15 @@ return {
   },
   {
     "f-person/git-blame.nvim",
-    cmd = "GitBlameToggle",
   },
   {
     "kdheepak/lazygit.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = "LazyGit",
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen" },
   },
   {
     "NvChad/nvim-colorizer.lua",
@@ -234,6 +229,7 @@ return {
   {
     "nvchad/base46",
     lazy = true,
+    branch = "v3.0",
     build = function()
       require("base46").load_all_highlights()
     end,
