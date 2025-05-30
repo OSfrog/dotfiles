@@ -1,6 +1,6 @@
 local nvchad_on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+local nvchad_capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = {
@@ -23,11 +23,13 @@ local function on_attach(client, bufnr)
   vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { buffer = bufnr, desc = "Lspsaga Code Action" })
 end
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
+-- -- lsps with default config
+-- for _, lsp in ipairs(servers) do
+--   -- local blink_capabilities = require("blink.cmp").get_lsp_capabilities(nvchad_capabilities)
+--   -- local combined_capabilities = vim.tbl_deep_extend("force", nvchad_capabilities, blink_capabilities)
+--   lspconfig[lsp].setup {
+--     on_attach = on_attach,
+--     on_init = on_init,
+--     capabilities = nvchad_capabilities,
+--   }
+-- end
