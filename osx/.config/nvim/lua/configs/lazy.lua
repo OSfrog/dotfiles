@@ -9,7 +9,7 @@ return {
       loaded = "",
       not_loaded = "",
     },
-    border = "rounded",
+    border = "single",
   },
 
   performance = {

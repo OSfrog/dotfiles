@@ -45,9 +45,8 @@ M.telescope = {
   pickers = {
     find_files = {
       follow = true,
-      no_ignore = true,
       hidden = true,
-      file_ignore_patterns = { "node_modules", ".git" },
+      file_ignore_patterns = { "node_modules", },
     },
   },
   extensions_list = {

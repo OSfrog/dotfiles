@@ -1,14 +1,19 @@
 #!/usr/bin/env zsh
 
 IP=$(curl -s https://ipinfo.io/ip)
+# IP="194.218.10.100"
 LOCATION_JSON=$(curl -s https://ipinfo.io/$IP/json)
 
 LOCATION="$(echo $LOCATION_JSON | jq '.city' | tr -d '"')"
+# LOCATION="Göteborg"
 REGION="$(echo $LOCATION_JSON | jq '.region' | tr -d '"')"
+# REGION="57.7089,11.9746"
 COUNTRY="$(echo $LOCATION_JSON | jq '.country' | tr -d '"')"
+# COUNTRY="SE"
 
 # Line below replaces spaces with +
 LOCATION_ESCAPED="${LOCATION// /+}+${REGION// /+}"
+# LOCATION_ESCAPED="57.7089,11.9746+Göteborg"
 WEATHER_JSON=$(curl -s "https://wttr.in/$LOCATION_ESCAPED?format=j1")
 
 # Fallback if empty

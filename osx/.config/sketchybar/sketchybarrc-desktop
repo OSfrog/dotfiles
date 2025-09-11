@@ -84,6 +84,18 @@ sketchybar --add event spotify_change $SPOTIFY_EVENT \
     script="$PLUGIN_DIR/spotify.sh" \
     --subscribe spotify spotify_change mouse.clicked
 
+
+keyboard=(
+    icon.drawing=off
+    label.font="$FONT:Semibold:14.0"
+    script="$PLUGIN_DIR/keyboard.sh"
+)
+
+sketchybar --add item keyboard right        \
+           --set keyboard "${keyboard[@]}"  \
+           --add event keyboard_change "AppleSelectedInputSourcesChangedNotification" \
+           --subscribe keyboard keyboard_change
+
 ##### Finalizing Setup #####
 sketchybar --update
 sketchybar --trigger space_change

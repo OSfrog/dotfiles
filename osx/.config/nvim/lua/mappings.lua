@@ -94,17 +94,24 @@ end, { desc = "Close all buffers except current" })
 
 -- LSPConfig Mappings
 map("n", "gh", function()
-  vim.lsp.buf.hover()
+  vim.lsp.buf.hover({
+    border = "single"
+  })
 end, { desc = "lsp hover" })
 map("n", "gR", function()
-  require "nvchad.lsp.renamer"()
+  require "nvchad.lsp.renamer" ()
 end, { desc = "lsp rename" })
+map("i", "<C-h>", function(context)
+  vim.lsp.buf.completion(context)
+end, { desc = "show signature help" })
+
 
 -- Telescope Mappings
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "live grep" })
 map("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", { desc = "find oldfiles" })
 map("n", "<leader>fa", function()
   require("telescope.builtin").find_files {
+    no_ignore = true,
     file_ignore_patterns = {},
   }
 end, { noremap = true, silent = true, desc = "find all files" })

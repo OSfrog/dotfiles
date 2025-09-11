@@ -55,6 +55,21 @@ local options = {
       "i",
       "s",
     }),
+    ["<C-h>"] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item() -- move through autocomplete list if open
+      else
+        -- Trigger completion manually to show relevant entries
+        cmp.complete {
+          config = {
+            sources = {
+              { name = "nvim_lsp" },
+            },
+          },
+          reason = cmp.ContextReason.Manual,
+        }
+      end
+    end, { "i", "c" }), -- Enable in insert mode,
   },
   -- explanations: https://github.com/hrsh7th/nvim-cmp/blob/main/doc/cmp.txt#L425
   performance = {

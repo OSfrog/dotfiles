@@ -3,6 +3,7 @@ local overrides = require "configs.overrides"
 return {
   {
     "stevearc/conform.nvim",
+    lazy = true,
     event = "BufWritePre",
     opts = function()
       return require "configs.conform"
@@ -16,22 +17,18 @@ return {
       {
         "williamboman/mason-lspconfig.nvim",
         config = function()
-          require("mason").setup {}
-          require("mason-lspconfig").setup {
-            ensure_installed = {
-              "lua_ls",
-              "html",
-              "cssls",
-              "ts_ls",
-              "clangd",
-              "prismals",
-              "eslint",
-              "vale_ls",
-              "yamlls",
-            },
-          }
+          require("mason").setup { ui = {
+            border = "single",
+          } }
           require("nvchad.configs.lspconfig").defaults()
           require "configs.lspconfig"
+          require("mason-lspconfig").setup {
+            handlers = {
+              function(server_name)
+                require("lspconfig")[server_name].setup {}
+              end,
+            },
+          }
         end,
       },
     },
@@ -73,6 +70,10 @@ return {
     end,
   },
   {
+    "FelipeLema/cmp-async-path",
+    enabled = false,
+  },
+  {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     config = function()
@@ -104,7 +105,6 @@ return {
   {
     {
       "CopilotC-Nvim/CopilotChat.nvim",
-      branch = "canary",
       event = "VeryLazy",
       dependencies = {
         { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -201,28 +201,6 @@ return {
     end,
   },
   {
-    "prettier/vim-prettier",
-    run = "yarn install",
-    ft = {
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "css",
-      "html",
-      "json",
-      "markdown",
-      "vue",
-      "yaml",
-      "scss",
-      "graphql",
-      "python",
-      "lua",
-      "ruby",
-      "php",
-    },
-  },
-  {
     "toppair/peek.nvim",
     event = { "VeryLazy" },
     build = "deno task --quiet build:fast",
@@ -256,9 +234,14 @@ return {
 
   {
     "nvchad/base46",
+    branch = "v3.0",
     lazy = true,
     build = function()
       require("base46").load_all_highlights()
     end,
+  },
+  {
+    "b0o/schemastore.nvim",
+    lazy = true,
   },
 }
