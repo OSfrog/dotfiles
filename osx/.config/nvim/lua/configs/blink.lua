@@ -3,11 +3,15 @@ return {
     preset = "enter",
     ["<Tab>"] = {
       function(cmp)
-        if require("copilot.suggestion").is_visible() then
+        local copilot = require "copilot.suggestion"
+        if copilot.is_visible() then
           cmp.hide()
-          require("copilot.suggestion").accept()
+          copilot.accept()
+        else
+          vim.api.nvim_feedkeys("  ", "i", true)
         end
       end,
+      "fallback",
     },
     ["<C-h"] = {
       function(cmp)
@@ -21,6 +25,16 @@ return {
       "exact",
       "score",
       "sort_text",
+    },
+  },
+
+  sources = {
+    providers = {
+      snippets = {
+        should_show_items = function(ctx)
+          return ctx.trigger.initial_kind ~= "trigger_character"
+        end,
+      },
     },
   },
 }
