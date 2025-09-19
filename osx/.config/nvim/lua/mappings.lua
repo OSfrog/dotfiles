@@ -94,17 +94,16 @@ end, { desc = "Close all buffers except current" })
 
 -- LSPConfig Mappings
 map("n", "gh", function()
-  vim.lsp.buf.hover({
-    border = "single"
-  })
+  vim.lsp.buf.hover {
+    border = "single",
+  }
 end, { desc = "lsp hover" })
 map("n", "gR", function()
-  require "nvchad.lsp.renamer" ()
+  require "nvchad.lsp.renamer"()
 end, { desc = "lsp rename" })
-map("i", "<C-h>", function(context)
-  vim.lsp.buf.completion(context)
+map("i", "<C-h>", function()
+  require("blink.cmp").show { providers = { "lsp" } }
 end, { desc = "show signature help" })
-
 
 -- Telescope Mappings
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "live grep" })
