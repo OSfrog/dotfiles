@@ -158,11 +158,92 @@ return {
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",
-      "mxsdev/nvim-dap-vscode-js",
+      {
+        "LiadOz/nvim-dap-repl-highlights",
+        config = true,
+        dependencies = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
+        build = function()
+          if not require("nvim-treesitter.parsers").has_parser "dap_repl" then
+            vim.cmd ":TSInstall dap_repl"
+          end
+        end,
+      },
     },
     config = function()
-      require "configs.dap"
+      require("configs.dap").setup()
     end,
+    keys = {
+      {
+        "<Leader>da",
+        "<CMD>lua require('dap').continue()<CR>",
+        desc = "Continue",
+      },
+      {
+        "<Leader>db",
+        "<CMD>lua require('dap').toggle_breakpoint()<CR>",
+        desc = "Toggle Breakpoint",
+      },
+      {
+        "<Leader>dB",
+        "<CMD>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+        desc = "Conditional Breakpoint",
+      },
+      {
+        "<Leader>dd",
+        "<CMD>lua require('dap').continue()<CR>",
+        desc = "Continue",
+      },
+      {
+        "<Leader>dh",
+        "<CMD>lua require('dapui').eval()<CR>",
+        desc = "Evaluate",
+      },
+      {
+        "<Leader>di",
+        "<CMD>lua require('dap').step_into()<CR>",
+        desc = "Step Into",
+      },
+      {
+        "<Leader>do",
+        "<CMD>lua require('dap').step_out()<CR>",
+        desc = "Step Out",
+      },
+      {
+        "<Leader>dO",
+        "<CMD>lua require('dap').step_over()<CR>",
+        desc = "Step Over",
+      },
+      {
+        "<Leader>dt",
+        "<CMD>lua require('dap').terminate()<CR>",
+        desc = "Terminate",
+      },
+      {
+        "<Leader>du",
+        "<CMD>lua require('dapui').open()<CR>",
+        desc = "Open UI",
+      },
+      {
+        "<Leader>dc",
+        "<CMD>lua require('dapui').close()<CR>",
+        desc = "Close UI",
+      },
+      {
+        "<Leader>dw",
+        "<CMD>lua require('dapui').float_element('watches', { enter = true })<CR>",
+        desc = "Watches",
+      },
+      {
+        "<Leader>ds",
+        "<CMD>lua require('dapui').float_element('scopes', { enter = true })<CR>",
+        desc = "Scopes",
+      },
+      {
+        "<Leader>dr",
+        "<CMD>lua require('dapui').float_element('repl', { enter = true })<CR>",
+        desc = "REPL",
+      },
+    },
   },
   {
     "nvim-tree/nvim-tree.lua",

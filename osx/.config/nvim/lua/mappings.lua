@@ -80,12 +80,6 @@ map("v", "<leader>cc", function()
   end
 end, { desc = "CopilotChat - Quick chat - Visual" })
 
--- CopilotChat - Prompt actions
-map("v", "<leader>cq", function()
-  local actions = require "CopilotChat.actions"
-  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-end, { desc = "CopilotChat - Prompt actions" })
-
 -- General Insert Mode Mappings
 map("i", "jj", "<ESC>", { desc = "escape insert mode" })
 
@@ -148,10 +142,3 @@ map("n", "<leader>gl", function()
   end
 end, { desc = "Toggle blame line" })
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Git GUI" })
-
--- Debugging Mappings
-map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "toggle breakpoint" })
-map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "continue" })
-map("n", "<leader>dn", "<cmd>lua require'dap'.step_over()<CR>", { desc = "step over" })
-map("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", { desc = "step into" })
-map("n", "<leader>do", "<cmd>lua require'dap'.step_out()<CR>", { desc = "step out" })

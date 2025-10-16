@@ -13,11 +13,6 @@ return {
       end,
       "fallback",
     },
-    ["<C-h"] = {
-      function(cmp)
-        cmp.show { providers = { "lsp" } }
-      end,
-    },
   },
 
   fuzzy = {
