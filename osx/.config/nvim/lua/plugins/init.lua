@@ -56,22 +56,10 @@ return {
       },
     },
   },
+  { import = "nvchad.blink.lazyspec" },
   {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-    },
-    config = function(opts)
-      require "configs.cmp"
-      opts.formatting = require("nvchad.cmp").formatting
-    end,
-  },
-  {
-    "FelipeLema/cmp-async-path",
-    enabled = false,
+    "saghen/blink.cmp",
+    opts = require "configs.blink",
   },
   {
     "zbirenbaum/copilot.lua",
@@ -113,6 +101,52 @@ return {
         window = {
           layout = "float",
         },
+      },
+    },
+  },
+  {
+    "folke/sidekick.nvim",
+    opts = {
+      -- add any options here
+      cli = {
+        mux = {
+          backend = "tmux",
+          enabled = false,
+        },
+      },
+    },
+    keys = {
+      {
+        "<c-.>",
+        function()
+          require("sidekick.cli").focus()
+        end,
+        mode = { "n", "x", "i", "t" },
+        desc = "Sidekick Switch Focus",
+      },
+      {
+        "<leader>aa",
+        function()
+          require("sidekick.cli").toggle { focus = true }
+        end,
+        desc = "Sidekick Toggle CLI",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ap",
+        function()
+          require("sidekick.cli").select_prompt()
+        end,
+        desc = "Sidekick Ask Prompt",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ac",
+        function()
+          require("sidekick.cli").toggle({ name = "copilot", focus = true })
+        end,
+        desc = "Sidekick Toggle Copilot CLI",
+        mode = { "n", "v" },
       },
     },
   },
@@ -242,6 +276,11 @@ return {
   },
   {
     "b0o/schemastore.nvim",
+    lazy = true,
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles" },
     lazy = true,
   },
 }

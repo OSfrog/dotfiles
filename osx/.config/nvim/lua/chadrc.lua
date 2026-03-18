@@ -17,7 +17,7 @@ end
 M.base46 = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "chadracula" },
-  transparency = true,
+  transparency = false,
   hl_override = highlights.override,
   hl_add = highlights.add,
 }
