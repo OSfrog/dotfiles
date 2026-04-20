@@ -13,25 +13,16 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason.nvim",
       {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-          require("mason").setup { ui = {
-            border = "single",
-          } }
-          require("nvchad.configs.lspconfig").defaults()
-          require "configs.lspconfig"
-          require("mason-lspconfig").setup {
-            handlers = {
-              function(server_name)
-                require("lspconfig")[server_name].setup {}
-              end,
-            },
-          }
-        end,
+        "mason-org/mason.nvim",
+        opts = { ui = { border = "single" } },
       },
+      "mason-org/mason-lspconfig.nvim",
     },
+    config = function()
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig"
+    end,
   },
   {
     "glepnir/lspsaga.nvim",
@@ -43,18 +34,6 @@ return {
     config = function()
       require "configs.lspsaga"
     end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-      },
-    },
   },
   { import = "nvchad.blink.lazyspec" },
   {
@@ -155,16 +134,17 @@ return {
     opts = {
       ensure_installed = {
         "vim",
+        "vimdoc",
+        "lua",
         "html",
         "css",
         "javascript",
+        "typescript",
+        "tsx",
         "json",
         "toml",
         "markdown",
         "bash",
-        "lua",
-        "tsx",
-        "typescript",
       },
     },
   },

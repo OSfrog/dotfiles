@@ -50,6 +50,7 @@ for _, lang in ipairs { "javascript", "javascriptreact", "typescript", "typescri
 end
 
 require("dapui").setup()
+dap_virtual_text.setup()
 
 dap.listeners.before.attach.dapui_config = function()
   dapui.open()
