@@ -11,30 +11,36 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      "williamboman/mason.nvim",
       {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-          require("mason").setup {}
-          require("mason-lspconfig").setup {
-            ensure_installed = {
-              "lua_ls",
-              "html",
-              "cssls",
-              "ts_ls",
-              "clangd",
-              "prismals",
-              "eslint",
-              "vale_ls",
-              "yamlls",
-            },
-          }
-          require("nvchad.configs.lspconfig").defaults()
-          require "configs.lspconfig"
-        end,
+        "mason-org/mason.nvim",
+        opts = {},
+      },
+      {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {
+          automatic_enable = false,
+          ensure_installed = {
+            "lua_ls",
+            "html",
+            "cssls",
+            "ts_ls",
+            "clangd",
+            "prismals",
+            "eslint",
+            "yamlls",
+            "tailwindcss",
+            "rust_analyzer",
+            "glsl_analyzer",
+          },
+        },
       },
     },
+    config = function()
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig"
+    end,
   },
   {
     "glepnir/lspsaga.nvim",
@@ -49,15 +55,28 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
+    -- NvChad v2.5 still uses the legacy nvim-treesitter API.
+    branch = "master",
+    build = ":TSUpdate",
+    lazy = false,
+    opts = function(_, opts)
+      opts.ensure_installed = {
+        "bash",
         "css",
-      },
-    },
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+      }
+
+      return opts
+    end,
   },
   { import = "nvchad.blink.lazyspec" },
   {
@@ -94,34 +113,14 @@ return {
     end,
   },
   {
-    {
-      "CopilotC-Nvim/CopilotChat.nvim",
-      event = "VeryLazy",
-      dependencies = {
-        { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-      },
-      opts = {
-        window = {
-          layout = "float",
-        },
-      },
+    "CopilotC-Nvim/CopilotChat.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
     },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = {
-        "vim",
-        "html",
-        "css",
-        "javascript",
-        "json",
-        "toml",
-        "markdown",
-        "bash",
-        "lua",
-        "tsx",
-        "typescript",
+      window = {
+        layout = "float",
       },
     },
   },
@@ -137,7 +136,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    event = "BufReadPre",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -145,7 +144,16 @@ return {
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
-    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+    dependencies = {
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function()
+          require("ts_context_commentstring").setup {
+            enable_autocmd = false,
+          }
+        end,
+      },
+    },
     config = function()
       require("Comment").setup {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),

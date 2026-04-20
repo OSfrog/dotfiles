@@ -4,6 +4,24 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+local function diagnostic_jump(count)
+  vim.diagnostic.jump {
+    count = count,
+    on_jump = function(diagnostic, bufnr)
+      if not diagnostic then
+        return
+      end
+
+      vim.diagnostic.open_float(bufnr, {
+        scope = "cursor",
+        focus = false,
+        border = "rounded",
+        source = "if_many",
+      })
+    end,
+  }
+end
+
 -- General Normal Mode Mappings
 map("n", "<leader>o", "]<space>o", { remap = true, desc = "insert 2 newlines down into insert mode" })
 map("n", "<leader>O", "[<space>O", { remap = true, desc = "insert 2 newlines up into insert mode" })
@@ -114,6 +132,12 @@ end, { desc = "lsp hover" })
 map("n", "gR", function()
   require "nvchad.lsp.renamer"()
 end, { desc = "lsp rename" })
+map("n", "<leader>uh", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
+end, { desc = "toggle inlay hints" })
+map("n", "<leader>ux", function()
+  vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled { bufnr = 0 }, { bufnr = 0 })
+end, { desc = "toggle codelens" })
 map("i", "<C-h>", function()
   require("blink.cmp").show { providers = { "lsp" } }
 end, { desc = "Trigger completion menu" })
@@ -127,10 +151,14 @@ map("n", "<leader>fa", function()
   }
 end, { noremap = true, silent = true, desc = "find all files" })
 
--- Lspsaga Mappings
-map("n", "<C-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "goto prev" })
-map("n", "<C-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "goto next" })
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "code action" })
+-- Native LSP diagnostics / actions
+map("n", "<C-k>", function()
+  diagnostic_jump(-1)
+end, { desc = "goto prev diagnostic" })
+map("n", "<C-j>", function()
+  diagnostic_jump(1)
+end, { desc = "goto next diagnostic" })
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })
 
 -- Git Mappings
 map("n", "<leader>gl", function()
