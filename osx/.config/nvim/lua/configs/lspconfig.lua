@@ -32,9 +32,21 @@ vim.lsp.config("yamlls", {
   },
 })
 
+-- Servers that exist in nvim-lspconfig's lsp/ runtimepath but must never
+-- auto-start in this environment. Without this exclusion, calling
+-- `:lsp enable` (no args) would pick them up for TypeScript/HTML buffers.
+local excluded_servers = { "angularls", "rome", "tsgo", "glsl_analyzer" }
+
 require("mason-lspconfig").setup {
   ensure_installed = servers,
   -- v2 default; auto-enables any server installed via Mason that has
   -- a config in nvim-lspconfig, so listed servers light up automatically.
-  automatic_enable = true,
+  automatic_enable = {
+    exclude = excluded_servers,
+  },
 }
+
+-- Belt-and-suspenders: explicitly disable these servers so they are never
+-- started regardless of how they were enabled (e.g. stale Mason install,
+-- project-local config, or a broad `:lsp enable` call).
+vim.lsp.enable(excluded_servers, false)
