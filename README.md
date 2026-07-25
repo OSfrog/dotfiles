@@ -1,6 +1,6 @@
 # macOS dotfiles
 
-Portable macOS configuration managed as one GNU Stow package. Only intentional configuration is versioned: no credentials, browser profiles, plugin checkouts, logs, backups, or generated application state.
+Portable macOS configuration managed as one GNU Stow package.
 
 ## Managed configuration
 
@@ -8,6 +8,23 @@ Portable macOS configuration managed as one GNU Stow package. Only intentional c
 - Sketchybar, yabai, skhd, and Karabiner-Elements
 - Shared terminal font and command-line dependencies required by these configurations
 
+## Screenshots
+
+### Sketchybar
+
+![Sketchybar](assets/screenshots/sketchybar.png)
+
+### Terminal prompt
+
+![Fish prompt](assets/screenshots/prompt.png)
+
+### tmux
+
+![tmux split panes](assets/screenshots/tmux.png)
+
+### Neovim dashboard
+
+![Neovim dashboard](assets/screenshots/neovim.png)
 
 ## Fresh-machine setup
 
@@ -62,7 +79,3 @@ macOS requires interactive user approval for privileged desktop integrations. Af
 3. Open Karabiner-Elements once and approve its system extension if prompted.
 
 The bootstrap intentionally does not use `sudo`, disable SIP, alter privacy databases, or change your login shell.
-
-## Repository policy
-
-Do not commit secrets, browser/application profiles, generated Fish state, plugin directories, logs, automatic backups, or `.DS_Store` files. Application-managed state belongs in the target machine's XDG or application-data directories, not under `osx/`.
