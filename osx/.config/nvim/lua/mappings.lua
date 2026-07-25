@@ -45,25 +45,6 @@ map("n", "<leader>cc", function()
   require("CopilotChat").toggle {}
 end, { desc = "toggle copilot chat" })
 
-map("n", "<leader>ccn", function()
-  local before = vim.tbl_map(function(buf)
-    return buf
-  end, vim.api.nvim_list_bufs())
-  require("CopilotChat").open {
-    window = {
-      layout = "replace",
-    },
-  }
-  vim.defer_fn(function()
-    local after = vim.api.nvim_list_bufs()
-    for _, buf in ipairs(after) do
-      if not vim.tbl_contains(before, buf) then
-        vim.bo[buf].buflisted = true
-      end
-    end
-  end, 50)
-end, { desc = "CopilotChat - New chat in a buffer" })
-
 --CopilotChat - Quick chat with current buffer
 map("n", "<leader>ccq", function()
   local input = vim.fn.input "Quick Chat: "
@@ -79,6 +60,15 @@ map("v", "<leader>cc", function()
     require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
   end
 end, { desc = "CopilotChat - Quick chat - Visual" })
+
+-- CopilotChat - Prompt actions
+map("v", "<leader>cq", function()
+  local actions = require "CopilotChat.actions"
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end, { desc = "CopilotChat - Prompt actions" })
+
+-- General Insert Mode Mappings
+map("i", "jj", "<ESC>", { desc = "escape insert mode" })
 
 -- General Visual Mode Mappings
 map(
@@ -111,37 +101,32 @@ end, { desc = "lsp hover" })
 map("n", "gR", function()
   require "nvchad.lsp.renamer"()
 end, { desc = "lsp rename" })
-map("n", "<leader>uh", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
-end, { desc = "toggle inlay hints" })
-map("n", "<leader>ux", function()
-  vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled { bufnr = 0 }, { bufnr = 0 })
-end, { desc = "toggle codelens" })
 map("i", "<C-h>", function()
   require("blink.cmp").show { providers = { "lsp" } }
-end, { desc = "Trigger completion menu" })
+end, { desc = "show signature help" })
 
 -- Telescope Mappings
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "live grep" })
 map("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", { desc = "find oldfiles" })
 map("n", "<leader>fa", function()
   require("telescope.builtin").find_files {
+    no_ignore = true,
     file_ignore_patterns = {},
   }
 end, { noremap = true, silent = true, desc = "find all files" })
 
 -- Lspsaga Mappings
-map("n", "<C-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "goto prev diagnostic" })
-map("n", "<C-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "goto next diagnostic" })
-map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "code action" })
+map("n", "<C-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "goto prev" })
+map("n", "<C-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "goto next" })
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "code action" })
 
 -- Git Mappings
-map("n", "<leader>gl", function()
-  local gitblame = require "gitblame"
-  if gitblame.is_blame_text_available() then
-    gitblame.disable()
-  else
-    gitblame.enable()
-  end
-end, { desc = "Toggle blame line" })
+map("n", "<leader>gl", "<CMD>GitBlameToggle<CR>", { desc = "Blame line" })
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Git GUI" })
+
+-- Debugging Mappings
+map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "toggle breakpoint" })
+map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "continue" })
+map("n", "<leader>dn", "<cmd>lua require'dap'.step_over()<CR>", { desc = "step over" })
+map("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", { desc = "step into" })
+map("n", "<leader>do", "<cmd>lua require'dap'.step_out()<CR>", { desc = "step out" })

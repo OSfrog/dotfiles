@@ -1,3 +1,4 @@
+command_timeout = 3600
 
 format = """
 [▒▓](mantle)\
@@ -15,7 +16,6 @@ $battery\
 """
 # [░▒▓](#6272a4)\
 palette = "catppuccin_mocha"
-command_timeout = 3000
 # add_newline = false
 
 # Replace the '❯' symbol in the prompt with '➜'

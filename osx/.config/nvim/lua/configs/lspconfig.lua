@@ -1,38 +1,55 @@
-local servers = require "configs.lsp_servers"
+-- Neovim 0.11+ / nvim-lspconfig v1+ / mason-lspconfig v2 setup.
+--
+-- NvChad's `defaults()` already:
+--   * sets capabilities + on_init globally via `vim.lsp.config("*", ...)`
+--   * registers the `LspAttach` autocmd that wires keymaps
+--   * configures and enables `lua_ls`
+--
+-- Here we just declare which extra servers to ensure-install via Mason
+-- and enable. Per-server overrides are merged with `vim.lsp.config(name, ...)`.
 
-local blink_ok, blink = pcall(require, "blink.cmp")
-if blink_ok then
-  local nvchad_capabilities = vim.deepcopy(require("nvchad.configs.lspconfig").capabilities)
-  vim.lsp.config("*", {
-    capabilities = blink.get_lsp_capabilities(nvchad_capabilities),
-  })
-end
+local servers = {
+  "html",
+  "cssls",
+  "ts_ls",
+  "clangd",
+  "yamlls",
+  "tailwindcss",
+  "eslint",
+  "rust_analyzer",
+  "marksman",
+}
 
--- Deno and the TS server must not both attach to the same buffer. denols owns
--- any directory tree that has a deno.json (e.g. supabase/functions); ts_ls owns
--- everything else. Overriding root_dir also drops denols' default `.git`
--- marker, which would otherwise make it attach across the whole repo.
-vim.lsp.config("denols", {
-  root_dir = function(bufnr, on_dir)
-    local root = vim.fs.root(bufnr, { "deno.json", "deno.jsonc" })
-    if root then
-      on_dir(root)
-    end
-  end,
+-- Per-server overrides must be registered BEFORE mason-lspconfig.setup()
+-- so that automatic_enable picks them up when enabling servers.
+vim.lsp.config("yamlls", {
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+      },
+    },
+  },
 })
 
-vim.lsp.config("ts_ls", {
-  root_dir = function(bufnr, on_dir)
-    -- Inside a Deno project, defer to denols.
-    if vim.fs.root(bufnr, { "deno.json", "deno.jsonc" }) then
-      return
-    end
+-- Servers that exist in nvim-lspconfig's lsp/ runtimepath but must never
+-- auto-start in this environment. Without this exclusion, calling
+-- `:lsp enable` (no args) would pick them up for TypeScript/HTML buffers.
+local excluded_servers = { "angularls", "rome", "tsgo", "glsl_analyzer" }
 
-    local root = vim.fs.root(bufnr, { "tsconfig.json", "jsconfig.json", "package.json", ".git" })
-    if root then
-      on_dir(root)
-    end
-  end,
-})
+require("mason-lspconfig").setup {
+  ensure_installed = servers,
+  -- v2 default; auto-enables any server installed via Mason that has
+  -- a config in nvim-lspconfig, so listed servers light up automatically.
+  automatic_enable = {
+    exclude = excluded_servers,
+  },
+}
 
-vim.lsp.enable(servers)
+-- Belt-and-suspenders: explicitly disable these servers so they are never
+-- started regardless of how they were enabled (e.g. stale Mason install,
+-- project-local config, or a broad `:lsp enable` call).
+vim.lsp.enable(excluded_servers, false)
+
+-- Sidekick needs the Copilot language server enabled through Neovim's LSP.
+vim.lsp.enable("copilot")

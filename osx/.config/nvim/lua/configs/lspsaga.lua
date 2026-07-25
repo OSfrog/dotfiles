@@ -90,6 +90,7 @@ lspsaga.setup {
   },
   outline = {
     win_position = "right",
+    win_with = "",
     win_width = 30,
     show_detail = true,
     auto_preview = true,

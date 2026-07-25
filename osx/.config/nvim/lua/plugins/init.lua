@@ -3,6 +3,7 @@ local overrides = require "configs.overrides"
 return {
   {
     "stevearc/conform.nvim",
+    lazy = true,
     event = "BufWritePre",
     opts = function()
       return require "configs.conform"
@@ -11,19 +12,12 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       {
         "mason-org/mason.nvim",
-        opts = {},
+        opts = { ui = { border = "single" } },
       },
-      {
-        "mason-org/mason-lspconfig.nvim",
-        opts = {
-          automatic_enable = false,
-          ensure_installed = require "configs.lsp_servers",
-        },
-      },
+      "mason-org/mason-lspconfig.nvim",
     },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
@@ -41,33 +35,6 @@ return {
       require "configs.lspsaga"
     end,
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    build = ":TSUpdate",
-    lazy = false,
-    init = function(plugin)
-      vim.opt.rtp:prepend(plugin.dir .. "/runtime")
-    end,
-    opts = function(_, opts)
-      opts.ensure_installed = {
-        "bash",
-        "css",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-      }
-
-      return opts
-    end,
-  },
   { import = "nvchad.blink.lazyspec" },
   {
     "saghen/blink.cmp",
@@ -83,7 +50,7 @@ return {
           auto_trigger = true,
           keymap = {
             accept_word = false,
-            accept_line = "<Tab>",
+            accept_line = false,
           },
         },
         filetypes = {
@@ -103,14 +70,84 @@ return {
     end,
   },
   {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    event = "VeryLazy",
+    {
+      "CopilotC-Nvim/CopilotChat.nvim",
+      event = "VeryLazy",
+      dependencies = {
+        { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+      },
+      opts = {
+        window = {
+          layout = "float",
+        },
+      },
+    },
+  },
+  {
+    "folke/sidekick.nvim",
+    opts = {
+      -- add any options here
+      cli = {
+        mux = {
+          backend = "tmux",
+          enabled = false,
+        },
+      },
+    },
+    keys = {
+      {
+        "<c-.>",
+        function()
+          require("sidekick.cli").focus()
+        end,
+        mode = { "n", "x", "i", "t" },
+        desc = "Sidekick Switch Focus",
+      },
+      {
+        "<leader>aa",
+        function()
+          require("sidekick.cli").toggle { focus = true }
+        end,
+        desc = "Sidekick Toggle CLI",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ap",
+        function()
+          require("sidekick.cli").prompt()
+        end,
+        desc = "Sidekick Ask Prompt",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ac",
+        function()
+          require("sidekick.cli").toggle({ name = "copilot", focus = true })
+        end,
+        desc = "Sidekick Toggle Copilot CLI",
+        mode = { "n", "v" },
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     opts = {
-      window = {
-        layout = "float",
+      ensure_installed = {
+        "vim",
+        "vimdoc",
+        "lua",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "toml",
+        "markdown",
+        "bash",
       },
     },
   },
@@ -126,7 +163,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "BufReadPre",
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -134,20 +171,23 @@ return {
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
-    dependencies = {
-      {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        config = function()
-          require("ts_context_commentstring").setup {
-            enable_autocmd = false,
-          }
-        end,
-      },
-    },
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
     config = function()
       require("Comment").setup {
         pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
       }
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+      "mxsdev/nvim-dap-vscode-js",
+    },
+    config = function()
+      require "configs.dap"
     end,
   },
   {
@@ -190,6 +230,7 @@ return {
   },
   {
     "f-person/git-blame.nvim",
+    cmd = "GitBlameToggle",
   },
   {
     "kdheepak/lazygit.nvim",
@@ -210,113 +251,19 @@ return {
 
   {
     "nvchad/base46",
-    lazy = true,
     branch = "v3.0",
+    lazy = true,
     build = function()
       require("base46").load_all_highlights()
     end,
   },
   {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
-    cmd = "Leet",
-    dependencies = {
-      -- include a picker of your choice, see picker section for more details
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
-    image_support = false,
-    opts = {
-      lang = "typescript",
-      plugins = {
-        non_standalone = true,
-      },
-    },
+    "b0o/schemastore.nvim",
+    lazy = true,
   },
   {
-    "folke/sidekick.nvim",
-    opts = {
-      cli = {
-        mux = {
-          backend = "tmux",
-          enabled = false,
-        },
-      },
-      nes = {
-        enabled = false,
-      },
-    },
-    keys = {
-      {
-        "<c-.>",
-        function()
-          require("sidekick.cli").toggle()
-        end,
-        desc = "Sidekick Toggle",
-        mode = { "n", "t", "i", "x" },
-      },
-      {
-        "<leader>aa",
-        function()
-          require("sidekick.cli").toggle()
-        end,
-        desc = "Sidekick Toggle CLI",
-      },
-      {
-        "<leader>as",
-        function()
-          require("sidekick.cli").select()
-        end,
-        -- Or to select only installed tools:
-        -- require("sidekick.cli").select({ filter = { installed = true } })
-        desc = "Select CLI",
-      },
-      {
-        "<leader>ad",
-        function()
-          require("sidekick.cli").close()
-        end,
-        desc = "Detach a CLI Session",
-      },
-      {
-        "<leader>at",
-        function()
-          require("sidekick.cli").send { msg = "{this}" }
-        end,
-        mode = { "x", "n" },
-        desc = "Send This",
-      },
-      {
-        "<leader>af",
-        function()
-          require("sidekick.cli").send { msg = "{file}" }
-        end,
-        desc = "Send File",
-      },
-      {
-        "<leader>av",
-        function()
-          require("sidekick.cli").send { msg = "{selection}" }
-        end,
-        mode = { "x" },
-        desc = "Send Visual Selection",
-      },
-      {
-        "<leader>ap",
-        function()
-          require("sidekick.cli").prompt()
-        end,
-        mode = { "n", "x" },
-        desc = "Sidekick Select Prompt",
-      },
-      -- Example of a keybinding to open Claude directly
-      {
-        "<leader>ac",
-        function()
-          require("sidekick.cli").toggle { name = "codex", focus = true }
-        end,
-        desc = "Sidekick Toggle Codex",
-      },
-    },
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles" },
+    lazy = true,
   },
 }

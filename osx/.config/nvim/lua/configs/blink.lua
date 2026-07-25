@@ -2,17 +2,16 @@ return {
   keymap = {
     preset = "enter",
     ["<Tab>"] = {
-      function()
-        local copilot = require "copilot.suggestion"
-        if copilot.is_visible() then
-          copilot.accept()
-          return true
+      function(cmp)
+        if require("copilot.suggestion").is_visible() then
+          cmp.hide()
+          require("copilot.suggestion").accept()
+        else
+          vim.api.nvim_feedkeys("  ", "i", true)
         end
       end,
-      "fallback",
     },
   },
-
   fuzzy = {
     sorts = {
       "exact",
