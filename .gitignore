@@ -1,0 +1,12 @@
+.DS_Store
+**/.DS_Store
+
+/osx/.config/fish/fish_variables*
+/osx/.config/fish/functions/
+/osx/.config/fish/completions/
+/osx/.config/fish/conf.d/
+/osx/.config/nvim/nvim.log
+/osx/.config/tmux/plugins/
+/osx/.config/karabiner/automatic_backups/
+/osx/.config/karabiner/assets/
+/osx/.config/sanity/

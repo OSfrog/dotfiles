@@ -1,0 +1,155 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly FORMULAE=(
+  fish
+  neovim
+  tmux
+  starship
+  eza
+  alacritty
+  sketchybar
+  yabai
+  skhd
+  jq
+  fzf
+  fastfetch
+  ripgrep
+  fd
+  node
+)
+readonly CASKS=(
+  karabiner-elements
+  font-jetbrains-mono-nerd-font
+)
+
+usage() {
+  cat <<'EOF'
+Usage: ./bootstrap --dry-run|--apply
+
+  --dry-run  Show the Stow changes that would be made. No software is installed.
+  --apply    Install dependencies, link the osx package, and initialize plugins.
+EOF
+}
+
+die() {
+  printf 'error: %s\n' "$*" >&2
+  exit 1
+}
+
+command_line() {
+  printf '+ '
+  printf '%q ' "$@"
+  printf '\n'
+}
+
+find_brew() {
+  if command -v brew >/dev/null 2>&1; then
+    command -v brew
+    return
+  fi
+
+  for brew in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    if [[ -x "$brew" ]]; then
+      printf '%s\n' "$brew"
+      return
+    fi
+  done
+}
+
+install_fisher() {
+  if fish -c 'functions -q fisher' >/dev/null 2>&1; then
+    fish -c 'fisher update'
+  else
+    fish -c 'curl -fsSL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source; and fisher update'
+  fi
+}
+
+install_tpm() {
+  local tpm_dir="${XDG_DATA_HOME:-$HOME/.local/share}/tmux/plugins/tpm"
+
+  if [[ ! -d "$tpm_dir/.git" ]]; then
+    mkdir -p "$(dirname "$tpm_dir")"
+    git clone --depth=1 https://github.com/tmux-plugins/tpm "$tpm_dir"
+  fi
+
+  "$tpm_dir/bin/install_plugins"
+}
+
+install_neovim_plugins() {
+  nvim --headless '+Lazy! sync' +qa
+}
+
+mode="${1:-}"
+case "$mode" in
+  --dry-run|--apply) ;;
+  *)
+    usage >&2
+    exit 2
+    ;;
+esac
+
+[[ "$(uname -s)" == Darwin ]] || die 'macOS is required.'
+(( EUID != 0 )) || die 'Run this script as your login user, never with sudo.'
+
+repo_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+target_dir="${DOTFILES_TARGET:-$HOME}"
+[[ -d "$target_dir" ]] || die "Stow target does not exist: $target_dir"
+
+brew_path="$(find_brew || true)"
+
+if [[ "$mode" == --dry-run ]]; then
+  printf 'Homebrew: %s\n' "${brew_path:-would install}"
+  command_line brew install stow "${FORMULAE[@]}"
+  command_line brew install --cask "${CASKS[@]}"
+
+  if command -v stow >/dev/null 2>&1; then
+    stow --no-folding --simulate --verbose=1 --dir="$repo_dir" --target="$target_dir" osx
+  else
+    printf 'Stow simulation skipped: GNU Stow is not installed.\n'
+  fi
+
+  exit 0
+fi
+
+if [[ -z "$brew_path" ]]; then
+  printf 'Installing Homebrew…\n'
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew_path="$(find_brew || true)"
+  [[ -n "$brew_path" ]] || die 'Homebrew installation completed without a brew executable on a supported path.'
+fi
+
+eval "$("$brew_path" shellenv)"
+
+brew update
+brew install stow
+
+printf 'Checking for Stow conflicts…\n'
+stow --no-folding --simulate --verbose=1 --dir="$repo_dir" --target="$target_dir" osx
+
+brew install "${FORMULAE[@]}"
+brew install --cask "${CASKS[@]}"
+
+printf 'Linking the macOS package…\n'
+stow --no-folding --restow --verbose=1 --dir="$repo_dir" --target="$target_dir" osx
+
+printf 'Initializing Fish, tmux, and Neovim plugins…\n'
+install_fisher
+install_tpm
+install_neovim_plugins
+
+for service in sketchybar yabai skhd; do
+  brew services restart "$service"
+done
+
+cat <<'EOF'
+
+Bootstrap complete.
+
+Manual macOS approvals still required:
+  - Enable Accessibility for yabai and skhd.
+  - Enable Accessibility and Input Monitoring for Karabiner-Elements.
+  - Open Karabiner-Elements once to approve its system extension if prompted.
+
+The script intentionally does not change SIP, grant privacy permissions, or change your login shell.
+EOF
