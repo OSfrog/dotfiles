@@ -8,11 +8,6 @@ Portable macOS configuration managed as one GNU Stow package. Only intentional c
 - Sketchybar, yabai, skhd, and Karabiner-Elements
 - Shared terminal font and command-line dependencies required by these configurations
 
-`main` is the default configuration. `volvo` retains the Volvo-specific configuration differences; select it before bootstrapping:
-
-```sh
-git switch volvo
-```
 
 ## Fresh-machine setup
 
