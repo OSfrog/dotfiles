@@ -62,7 +62,7 @@ mods = "Control|Shift"
 save_to_clipboard = true
 
 [terminal.shell]
-program = "fish"
+program = "/opt/homebrew/opt/fish/bin/fish"
 
 [window]
 decorations = "buttonless"

@@ -66,14 +66,15 @@ install_fisher() {
 }
 
 install_tpm() {
-  local tpm_dir="${XDG_DATA_HOME:-$HOME/.local/share}/tmux/plugins/tpm"
+  local config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins"
+  local tpm_dir="$config_dir/tpm"
 
   if [[ ! -d "$tpm_dir/.git" ]]; then
     mkdir -p "$(dirname "$tpm_dir")"
     git clone --depth=1 https://github.com/tmux-plugins/tpm "$tpm_dir"
   fi
 
-  "$tpm_dir/bin/install_plugins"
+  TMUX_PLUGIN_MANAGER_PATH="$config_dir" "$tpm_dir/bin/install_plugins"
 }
 
 install_neovim_plugins() {
