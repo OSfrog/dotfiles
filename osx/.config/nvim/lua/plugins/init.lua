@@ -319,4 +319,44 @@ return {
       },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles" },
+    lazy = true,
+    keys = {
+      {
+        "<leader>df",
+        function()
+          local diffview = require "diffview"
+
+          if require("diffview.lib").get_current_view() then
+            diffview.close()
+          else
+            diffview.open {}
+          end
+        end,
+        desc = "Toggle Diffview",
+      },
+    },
+    opts = function()
+      local actions = require "diffview.actions"
+
+      return {
+        keymaps = {
+          file_panel = {
+            ["<C-b>"] = false,
+            ["<C-f>"] = false,
+            { "n", "<C-u>", actions.scroll_view(-0.5), { desc = "Scroll the view up" } },
+            { "n", "<C-d>", actions.scroll_view(0.5), { desc = "Scroll the view down" } },
+          },
+          file_history_panel = {
+            ["<C-b>"] = false,
+            ["<C-f>"] = false,
+            { "n", "<C-u>", actions.scroll_view(-0.5), { desc = "Scroll the view up" } },
+            { "n", "<C-d>", actions.scroll_view(0.5), { desc = "Scroll the view down" } },
+          },
+        },
+      }
+    end,
+  },
 }
