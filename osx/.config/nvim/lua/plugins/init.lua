@@ -49,8 +49,8 @@ return {
     init = function(plugin)
       vim.opt.rtp:prepend(plugin.dir .. "/runtime")
     end,
-    opts = function(_, opts)
-      opts.ensure_installed = {
+    config = function()
+      local languages = {
         "bash",
         "css",
         "html",
@@ -65,7 +65,16 @@ return {
         "vimdoc",
       }
 
-      return opts
+      require("nvim-treesitter").setup {}
+      require("nvim-treesitter").install(languages)
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("user_treesitter", { clear = true }),
+        pattern = languages,
+        callback = function(args)
+          vim.treesitter.start(args.buf)
+        end,
+      })
     end,
   },
   { import = "nvchad.blink.lazyspec" },
