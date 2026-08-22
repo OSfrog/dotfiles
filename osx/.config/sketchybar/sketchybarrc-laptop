@@ -83,6 +83,22 @@ sketchybar --add item front_app left \
     icon.drawing=off \
     label.font="$FONT_FACE:Bold:12.0" \
     label.drawing=yes
+sketchybar --add item codex_usage left \
+    --set codex_usage \
+    padding_left=5 \
+    icon=󰚩 \
+    icon.color=0xffcad3f5 \
+    update_freq=600 \
+    script="$PLUGIN_SHARED_DIR/codex_usage.sh" \
+    --subscribe codex_usage system_woke mouse.clicked
+
+sketchybar --add item claude_usage left \
+    --set claude_usage \
+    icon=✳ \
+    icon.color=0xfff5a97f \
+    update_freq=600 \
+    script="$PLUGIN_SHARED_DIR/claude_usage.sh" \
+    --subscribe claude_usage system_woke mouse.clicked
 
 sketchybar --add item weather.moon q \
     --set weather.moon \
@@ -131,21 +147,6 @@ sketchybar --add item volume right \
     script="$PLUGIN_SHARED_DIR/volume.sh" \
     --subscribe volume volume_change
 
-sketchybar --add item codex_usage right \
-    --set codex_usage \
-    icon=󰚩 \
-    icon.color=0xffcad3f5 \
-    update_freq=600 \
-    script="$PLUGIN_SHARED_DIR/codex_usage.sh" \
-    --subscribe codex_usage system_woke mouse.clicked
-
-sketchybar --add item claude_usage right \
-    --set claude_usage \
-    icon=✳ \
-    icon.color=0xfff5a97f \
-    update_freq=600 \
-    script="$PLUGIN_SHARED_DIR/claude_usage.sh" \
-    --subscribe claude_usage system_woke mouse.clicked
 
 sketchybar --add event input_source_change "AppleSelectedInputSourcesChangedNotification" \
     --add item input_source right \
