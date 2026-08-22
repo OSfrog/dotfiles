@@ -1,6 +1,11 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:$HOME/.docker/bin"
+# End of Docker Desktop section.
+
 set fish_greeting ""
 set -gx EDITOR nvim
 set -gx TERM screen-256color
+set -gx NVIM_NOTTYFAST 1
 
 if type -q security
     set -l node_auth_token (security find-generic-password -a $USER -s NODE_AUTH_TOKEN -w 2>/dev/null)
