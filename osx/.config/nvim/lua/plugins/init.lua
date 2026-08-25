@@ -25,6 +25,18 @@ return {
     end,
   },
   {
+    url = "https://gitlab.com/schrieveslaach/sonarlint.nvim.git",
+    name = "sonarlint.nvim",
+    event = "BufReadPre",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      local config = require "configs.sonarlint"
+      if config then
+        require("sonarlint").setup(config)
+      end
+    end,
+  },
+  {
     "glepnir/lspsaga.nvim",
     dependencies = {
       "nvim-treesitter/nvim-treesitter", -- optional
