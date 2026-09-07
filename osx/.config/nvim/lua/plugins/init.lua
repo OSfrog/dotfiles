@@ -99,6 +99,9 @@ return {
     "folke/sidekick.nvim",
     opts = {
       -- add any options here
+      nes = {
+        enabled = false, -- disable inline Copilot "Next Edit Suggestions"
+      },
       cli = {
         mux = {
           backend = "tmux",
@@ -134,7 +137,7 @@ return {
       {
         "<leader>ac",
         function()
-          require("sidekick.cli").toggle({ name = "copilot", focus = true })
+          require("sidekick.cli").toggle { name = "copilot", focus = true }
         end,
         desc = "Sidekick Toggle Copilot CLI",
         mode = { "n", "v" },
@@ -157,6 +160,7 @@ return {
         "typescript",
         "tsx",
         "json",
+        "yaml",
         "toml",
         "markdown",
         "bash",
@@ -185,8 +189,13 @@ return {
     event = "VeryLazy",
     dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
     config = function()
+      local context_pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+
       require("Comment").setup {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+        pre_hook = function(ctx)
+          local commentstring = context_pre_hook(ctx)
+          return commentstring or (vim.bo.commentstring ~= "" and vim.bo.commentstring or nil)
+        end,
       }
     end,
   },
