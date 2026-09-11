@@ -124,51 +124,8 @@ map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "code action" })
 map("n", "<leader>gl", "<CMD>GitBlameToggle<CR>", { desc = "Blame line" })
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", { desc = "Git GUI" })
 map("n", "<leader>gq", function()
-  local root_result = vim.system({ "git", "rev-parse", "--show-toplevel" }, { text = true }):wait()
-  if root_result.code ~= 0 then
-    vim.notify("Not inside a Git repository", vim.log.levels.ERROR)
-    return
-  end
-
-  local root = vim.trim(root_result.stdout)
-  local commands = {
-    { "git", "diff", "--name-only", "--diff-filter=ACMRTUXB", "-z" },
-    { "git", "ls-files", "--others", "--exclude-standard", "-z" },
-  }
-  local files = {}
-
-  for _, command in ipairs(commands) do
-    local result = vim.system(command, { cwd = root }):wait()
-    if result.code ~= 0 then
-      vim.notify(vim.trim(result.stderr or "Failed to list Git changes"), vim.log.levels.ERROR)
-      return
-    end
-
-    for _, file in ipairs(vim.split(result.stdout or "", "\0", { plain = true, trimempty = true })) do
-      files[file] = true
-    end
-  end
-
-  local items = {}
-  for file in vim.spairs(files) do
-    items[#items + 1] = {
-      filename = root .. "/" .. file,
-      lnum = 1,
-    }
-  end
-
-  vim.fn.setqflist({}, " ", {
-    title = "Unstaged Git files",
-    items = items,
-  })
-
-  if #items == 0 then
-    vim.notify("No unstaged Git files")
-    return
-  end
-
-  vim.cmd.copen()
-end, { desc = "Unstaged files to quickfix" })
+  require("configs.diffview_qf").open()
+end, { desc = "Unstaged files to quickfix (Diffview)" })
 
 -- Debugging Mappings
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "toggle breakpoint" })
