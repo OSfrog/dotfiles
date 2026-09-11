@@ -69,3 +69,32 @@ vim.cmd [[
     autocmd BufRead,BufNewFile *.env set filetype=dotenv
   augroup END
 ]]
+
+-- Open unstaged Git files in Diffview from quickfix list
+autocmd("FileType", {
+  pattern = "qf",
+  callback = function(event)
+    local function open_entry()
+      local qf_info = vim.fn.getqflist({ context = 1 })
+      if qf_info.context and type(qf_info.context) == "table" and qf_info.context.type == "diffview_git_unstaged" then
+        local line = vim.fn.line(".")
+        local items = vim.fn.getqflist()
+        local item = items[line]
+        if item and item.valid == 1 then
+          local filename = item.filename
+          if not filename or filename == "" then
+            filename = vim.api.nvim_buf_get_name(item.bufnr)
+          end
+          if filename and filename ~= "" then
+            require("configs.diffview_qf").open_file(filename, qf_info.context.root)
+            return
+          end
+        end
+      end
+      vim.cmd("silent! " .. vim.fn.line(".") .. "cc")
+    end
+
+    vim.keymap.set("n", "<CR>", open_entry, { buffer = event.buf, silent = true, desc = "Open in Diffview" })
+    vim.keymap.set("n", "<2-LeftMouse>", open_entry, { buffer = event.buf, silent = true, desc = "Open in Diffview" })
+  end,
+})
